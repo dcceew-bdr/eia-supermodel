@@ -20,12 +20,12 @@ jobs:
       run: |
         echo "installing asciidoctor"
         sudo apt-get install asciidoctor ruby -y
-        echo "Making deployment dir - docs/"
+        echo "Making deployment dir - docs/guidance.html"
         mkdir docs
         echo "Add README to docs/"
         asciidoctor README.adoc -o docs/index.html
         echo "Add supermodel to docs/"
-        asciidoctor document/supermodel.adoc -o docs/supermodel.html
+        asciidoctor document/supermodel.adoc -o docs/index.html
         echo "Add supermodel RDF to docs/"
         cp *.ttl docs/
         echo "Add images to docs/"

@@ -28,7 +28,7 @@ For the human-readable specification of the EIA Supermodel, see:
 == Supermodel Elements
 
 * https://linked.data.gov.au/def/eia-supermodel[Specification]
-* https://linked.data.gov.au/def/eia-supermodel/profile.ttl[Technical Definition]
+* https://raw.githubusercontent.com/dcceew-bdr/eia-supermodel/refs/heads/gh-pages/profile.ttl[Technical Definition]
 
 == Rights and License
 
