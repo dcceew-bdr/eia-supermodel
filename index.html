@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Environmental Information Australia Supermodel</title>
+<link rel="icon" type="image/svg" href="images/logo-qld.svg">
+<title>Queensland Spatial Information Supermodel</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,37 +436,74 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Environmental Information Australia Supermodel</h1>
+<h1>Queensland Spatial Information Supermodel</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_metadata">1. Metadata</a></li>
-<li><a href="#_supermodel_elements">2. Supermodel Elements</a></li>
-<li><a href="#_rights_and_license">3. Rights and License</a></li>
-<li><a href="#_contacts">4. Contacts</a></li>
+<li><a href="#_introduction">2. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_modelling_system">2.1. Modelling System</a></li>
+<li><a href="#_integrative_models">2.2. Integrative Models</a></li>
+<li><a href="#_definitions">2.3. Definitions</a></li>
+<li><a href="#_doc_structure">2.4. Doc Structure</a></li>
+</ul>
+</li>
+<li><a href="#_models">3. Models</a>
+<ul class="sectlevel2">
+<li><a href="#_supermodel">3.1. Supermodel</a>
+<ul class="sectlevel3">
+<li><a href="#_human_readable_form">3.1.1. Human-readable Form</a></li>
+<li><a href="#_machine_readable_form">3.1.2. Machine-readable Form</a></li>
+</ul>
+</li>
+<li><a href="#_backbone_model">3.2. Backbone Model</a>
+<ul class="sectlevel3">
+<li><a href="#_classes">3.2.1. Classes</a></li>
+<li><a href="#_properties">3.2.2. Properties</a></li>
+</ul>
+</li>
+<li><a href="#_component_models">3.3. Component Models</a>
+<ul class="sectlevel3">
+<li><a href="#_anz_national_address_model">3.3.1. ANZ National Address Model</a></li>
+<li><a href="#_geographical_names_model">3.3.2. Geographical Names Model</a></li>
+<li><a href="#_roads_model">3.3.3. Roads Model</a></li>
+<li><a href="#_cadastre_model">3.3.4. Cadastre Model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#PIDs">Annex A: PID Rules</a>
+<ul class="sectlevel2">
+<li><a href="#_type">Type</a></li>
+<li><a href="#_authority">Authority</a></li>
+<li><a href="#_non_iri_representation">Non-IRI Representation</a></li>
+<li><a href="#_kinds">Kinds</a></li>
+<li><a href="#_definitional_pids">Definitional PIDs</a></li>
+<li><a href="#_known_systems">Known Systems</a></li>
+<li><a href="#_pid_representation">PID representation</a></li>
+</ul>
+</li>
+<li><a href="#Validation">Annex B: Validation</a></li>
+<li><a href="#_references">References</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>This document is both the front page of the Environmental Information Australia Supermodel&#8217;s repository and a <em>Guidance document</em> that introduces all the other elements of this EIA Supermodel.</p>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="images/overview.svg" alt="overview" width="700">
+</div>
 </div>
 <div class="paragraph">
-<p>For the human-readable specification of the EIA Supermodel, see:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://linked.data.gov.au/def/eia-supermodel" class="bare">https://linked.data.gov.au/def/eia-supermodel</a></p>
-</li>
-</ul>
+<p>This 'Supermodel' is a set of data models used by <a href="https://www.nrmmrrd.qld.gov.au/data-mapping">Queensland Spatial Information</a> to integrate data from formerly separate systems into an interoperable whole.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_metadata">1. Metadata</h2>
+<h2 id="_metadata"><a class="anchor" href="#_metadata"></a>1. Metadata</h2>
 <div class="sectionbody">
 <table class="tableblock frame-none grid-none stripes-even" style="width: 75%;">
 <colgroup>
@@ -475,23 +513,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IRI</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>https://linked.data.gov.au/def/eia-supermodel/guidance</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/qsi-supermodel" class="bare">https://linked.data.gov.au/def/qsi-supermodel</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Title</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EIA Supermodel Guidance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QSI Supermodel</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This document is both the front page of the Queensland Land Information Supermodel&#8217;s repository and a <em>Guidance document</em> and introduces all the other elements of this Supermodel.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is an overarching model - a Supermodel - used to integrate multiple, individual, models together for use within a particular scenario.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Created</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-04-15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-03-13</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-07-22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-02-21</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -499,11 +537,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Creator</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://kurrawong.ai">KurrawongAI</a>, for QSI</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Publisher</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/dcceew">DCCEEW</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/org/qsi">Queensland Spatial Information</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>License</strong></p></td>
@@ -511,57 +549,899 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Code Repository</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/dcceew-bdr/eia-supermodel" class="bare">https://github.com/dcceew-bdr/eia-supermodel</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/Spatial-Information-QLD/supermodel">https://github.com/</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_supermodel_elements">2. Supermodel Elements</h2>
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>2. Introduction</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Multiple fundamental spatial datasets in Queensland have had system upgrades and been remodelled to modernise their tools and content structure and to align them better with one another. For example, the Address and Geographical Names data have been moved from old, separate, relational databases into a single modern graph database and cadastral information has had its underlying spatial technology upgraded. The Address, Geographical (Place) Names and Cadastral data models have been updated to either directly use, or to make public correspondences to, the "Background Models" in the overview diagram above.</p>
+</div>
+<div class="paragraph">
+<p>For all datasets in all systems, their codelists, lookup values and feature types have been updated into stand-alone controlled vocabularies, many of which are standardised with other ANZ jurisdictions and published by <a href="https://www.icsm.gov.au">ICSM</a>.</p>
+</div>
+<div class="paragraph">
+<p>By using/corresponding to Background Models and using standard terms from Vocabularies, the "Component Models" for each major QSI dataset share common structural patterns and values such that they can be cross-queried and used together in many ways. For example, you can query the combined system for an Address and get any Geographical Names that are part of it and their spatial extents, as well as the Property grouping of cadastral parcels it is an address for and their spatial extents.</p>
+</div>
+<div class="paragraph">
+<p>In addition to component system upgrades and model upgrades, a number of new web services and data platforms have also been implemented by QSI to make using these now harmonised models together much easier at a technical level: single access points, etc.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="images/logo-owl.png" alt="logo owl">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modelling_system"><a class="anchor" href="#_modelling_system"></a>2.1. Modelling System</h3>
+<div class="paragraph">
+<p>All the models in this <a href="#SM">Supermodel</a> set are implemented using the <a href="#OWL"><em>Web Ontology Language</em> OWL</a>. OWL is a very widely used, standardised, formal modelling language. Unlike <a href="#UML">UML</a> models, OWL models natively have machine-readable forms allowing data made according to them to be automatically validated and processed into databases.</p>
+</div>
+<div class="paragraph">
+<p>The Supermodel&#8217;s constituent models are related to one another using <a href="#PROF"><em>The Profiles Vocabulary</em> PROF</a> which provides properties to indicate when and how one model reuses - "<a href="#profile">profiles</a>" - another. PROF also links models to validators created to test data claiming conformance to them.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<a class="image" href="images/geosparql-overview.svg"><img src="images/geosparql-overview.svg" alt="geosparql overview" width="500"></a>
+</div>
+<div class="title">Figure 1. <a href="#GEO">GeoSPARQL</a> overview</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_integrative_models"><a class="anchor" href="#_integrative_models"></a>2.2. Integrative Models</h3>
+<div class="paragraph">
+<p>An <a href="#IM">Integrative Model</a> is a main model that all the <a href="#_component_models">Component Models</a> within a <a href="#SM">Supermodel</a> context implement and extend for their specialised purposes. Supermodels always have one or mode of these.</p>
+</div>
+<div class="paragraph">
+<p>In this Supermodel, the two Integrative Models are:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://linked.data.gov.au/def/eia-supermodel">Specification</a></p>
+<p><a href="#GEO">GeoSPARQL</a> - an international Semantic Web model standard for spatial data</p>
 </li>
 <li>
-<p><a href="https://linked.data.gov.au/def/eia-supermodel/profile.ttl">Technical Definition</a></p>
+<p><a href="#CN">Compound Naming Model</a> - an Australian model for sophisticated object naming</p>
+</li>
+<li>
+<p><a href="#SDO">schema.org</a> - a general-purpose Semantic Web model</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>GeoSPARQL is used for the fundamental representation of spatial objects, for example in the <a href="#CAD">Cadastre Model</a>, a <code>Parcel</code> is a GeoSPARQL spatial <code>Feature</code>, as is an <code>Addressable Object</code> in the <a href="#ADDR">Address Model</a>.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<a class="image" href="images/cn-overview.svg"><img src="images/cn-overview.svg" alt="cn overview" width="200"></a>
+</div>
+<div class="title">Figure 2. <a href="#CN">CN</a> overview</div>
+</div>
+<div class="paragraph">
+<p>The <a href="#CN">Compound Naming Model</a> is used to represent names for things that are made of many parts, including other names. The Address Model&#8217;s main class of <code>Address</code> is a specialised form of the Compound Naming Model&#8217;s <code>Compound Name</code>, as is the <a href="#GN">Geographical Naming Model</a>'s <code>Geographical Name</code>.</p>
+</div>
+<div class="paragraph">
+<p><a href="#SDO">schema.org</a> is used to provide common relationships between things such as <code>has part</code> - something being part of another thing.</p>
+</div>
+<div class="paragraph">
+<p>Since all the <a href="#CN">Component Models</a> reuse GeoSPARQL&#8217;s <code>Feature</code>, Compound Naming&#8217;s <code>Compound Name</code> and schema.org relations, the Component Models' specialised information is known to be patterned according to these models and thus certain assumptions about them can be made before even looking in to their specifics. For example, we can assume, correctly, that all spatial objects in all Component Models are linked to geometry representations of them via a <code>has geometry</code> relation (or specialised version thereof) and that all geometries are available in Well-Known Text <a href="#WKT">Well-Known Text</a> form, given that i a requirement for GeoSPARQL Geometry objects.</p>
+</div>
+<div class="imageblock right">
+<div class="content">
+<img src="images/sdo-logo.png" alt="sdo logo" width="200">
+</div>
+<div class="title">Figure 3. <a href="#SDO">schema.org</a> logo</div>
+</div>
+<div class="paragraph">
+<p>The following figure provides an overview of the main elements of the Integrative Models in this Supermodel.</p>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<a class="image" href="images/ims-overview.svg"><img src="images/ims-overview.svg" alt="ims overview" width="500"></a>
+</div>
+<div class="title">Figure 4. <a href="#IM">IMs</a> overview</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>EXAMPLE: Yundah</strong></p>
+</div>
+<div class="paragraph">
+<p>Here is an example of a real Queensland address, <em>72 Yundah St, Shorncliffe</em>, using Address, Cadastre &amp; Geographical Names data, presented according to the elements in the Integrative Model overview figure, above.</p>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<a class="image" href="images/eg-yundah.svg"><img src="images/eg-yundah.svg" alt="eg yundah" width="400"></a>
+</div>
+</div>
+<div class="paragraph">
+<p>A complete Address has much more information than this, such as Geocodes and Lifecycle stages, but this example shows the Address / Parcel main link between the Address Model and Cadastre Model.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_definitions"><a class="anchor" href="#_definitions"></a>2.3. Definitions</h3>
+<div class="paragraph">
+<p>Here is a list of terms and acronyms used in this document.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="BM"></a> Background Model</dt>
+<dd>
+<p>A role within a Supermodel for low level or generic models that some, but not necessarily all, of the <a href="#_component_models">Component Models</a> and the <a href="#IM">Integrative Model</a> reuse and extend.</p>
+</dd>
+<dt class="hdlist1"><a id="CM"></a> Component Model</dt>
+<dd>
+<p>A role within a Supermodel for the models of individual datasets within the set aiming for interoperability. Component Models must reuse and extend the <a href="#IM">Integrative Model</a>.</p>
+</dd>
+<dt class="hdlist1">Compound Name</dt>
+<dd>
+<p>The class of objects for "a literal value, or objects that can be interpreted as literal values, that describe or name a Feature", according to the <a href="#CN">Compound Naming Model</a></p>
+</dd>
+<dt class="hdlist1">Feature</dt>
+<dd>
+<p>The class of object for "Anything spatial (being or having a shape, position or an extent)", according to <a href="#GEO">GeoSPARQL</a></p>
+</dd>
+<dt class="hdlist1">Geometry</dt>
+<dd>
+<p>The class of object for "A coherent set of direct positions in space", according to <a href="#GEO">GeoSPARQL</a></p>
+</dd>
+<dt class="hdlist1"><a id="IM"></a> Integrative Model</dt>
+<dd>
+<p>A role within a Supermodel for models reused and extended by <a href="#_component_models">Component Models</a>. Use of these models ensures general modelling patterns are present in all Component Models.</p>
+</dd>
+<dt class="hdlist1"><a id="IRI"></a> IRI</dt>
+<dd>
+<p>Internationalized Resource Identifiers (IRIs) are Internet protocol standard identifiers used to identify, and often to link to representations of, resources. IRIs add internationalisation (use of different character sets to) Uniform Resource Identifiers (URIs) which are a superset of Uniform Resource Locators (URLs). Where URLs - web addresses - must link to resources, URIs often do but need not. <a href="https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier">[ref</a>]</p>
+</dd>
+<dt class="hdlist1"><a id="profile"></a> profile</dt>
+<dd>
+<p>"A specification that constrains, extends, combines, or provides guidance or explanation about the usage of other specifications" according to <a href="#PROF">The Profiles Vocabulary</a>.</p>
+</dd>
+<dt class="hdlist1"><a id="SM"></a> Supermodel</dt>
+<dd>
+<p>A set of integrated data models used with defined roles used to make multiple datasets interoperable.</p>
+</dd>
+<dt class="hdlist1"><a id="UML"></a> Unified Modelling Language, UML</dt>
+<dd>
+<p>A general-purpose visual modeling language that is intended to provide a standard way to visualize the design of a system. <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language">[ref</a>]</p>
+</dd>
+<dt class="hdlist1">Vocabulary</dt>
+<dd>
+<p>A controlled set of defined terms. Within Supermodel contexts, all vocabularies reuse and extend the <a href="#SKOS">SKOS</a> vocabulary model.</p>
+</dd>
+<dt class="hdlist1">Web Ontology Language, OWL</dt>
+<dd>
+<p>A widely used international standard modelling language that allows for machine-readability of models.</p>
+</dd>
+<dt class="hdlist1"><a id="WKT"></a> Well-Known Text</dt>
+<dd>
+<p>A text markup language for representing vector geometry objects. WKT was defined in <a href="#ISO19125-1">ISO19125-1</a> and extended by <a href="#GEO">GeoSPARQL</a> to allow for Spatial Reference Systems.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_doc_structure"><a class="anchor" href="#_doc_structure"></a>2.4. Doc Structure</h3>
+<div class="paragraph">
+<p>The structure of this document and the roles of each part are as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="#_metadata">Metadata</a> - Metadata about this document</p>
+</li>
+<li>
+<p><a href="#_introduction">Introduction</a> - An introduction to the Supermodel concept and this particular Supermodel</p>
+</li>
+<li>
+<p><a href="#_models">Models</a> - The specific models within this Supermodel<br></p>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#PIDs">Annex A: PID Rules</a> - Rules for the Persistent Identifiers (PIDs) to be used by data wishing to conform to this Supermodel</p>
+</li>
+<li>
+<p><a href="#Validation">Annex B: Validation</a> - How to validate data wishing to conform to this Supermodel</p>
+</li>
+<li>
+<p><a href="#_references">References</a> - All the important reference standards and models for this</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_rights_and_license">3. Rights and License</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Content generated by the Department of Climate Change, Energy, the Environment and Water (DCCEEW) is copyright as follows:</p>
-</div>
-<div class="paragraph">
-<p>&copy; Commonwealth of Australia, 2025</p>
-</div>
-<div class="paragraph">
-<p>This information is available for reuse under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons 4.0 license</a>, see the LICENSE file for the deed.</p>
-</div>
-</div>
 </div>
 <div class="sect1">
-<h2 id="_contacts">4. Contacts</h2>
+<h2 id="_models"><a class="anchor" href="#_models"></a>3. Models</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_supermodel"><a class="anchor" href="#_supermodel"></a>3.1. Supermodel</h3>
 <div class="paragraph">
-<p>For all enquiries, please contact:</p>
+<p>This Supermodel is the total set models listed here.</p>
+</div>
+<div class="sect3">
+<h4 id="_human_readable_form"><a class="anchor" href="#_human_readable_form"></a>3.1.1. Human-readable Form</h4>
+<div class="paragraph">
+<p>This document contains the normative, human-readable description of the Supermodel.</p>
 </div>
 <div class="paragraph">
-<p><strong>BDR Team</strong><br>
-<a href="mailto:bdr@dcceew.gov.au">bdr@dcceew.gov.au</a></p>
+<p>The Supermodel is the total set of models listed below and is also conceived of as a <a href="#profile">profile</a> of the total set.</p>
+</div>
+<div class="paragraph">
+<p>The models within this Supermodel and the roles they play are listed in the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 37.5%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">PID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/addr" class="bare">https://linked.data.gov.au/def/addr</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geographical Names Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/gn" class="bare">https://linked.data.gov.au/def/gn</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Names Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/roads" class="bare">https://linked.data.gov.au/def/roads</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cadastral Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cadastral Survey Data Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/csdm" class="bare">https://linked.data.gov.au/def/csdm</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_machine_readable_form"><a class="anchor" href="#_machine_readable_form"></a>3.1.2. Machine-readable Form</h4>
+<div class="paragraph">
+<p>The machine-readable form of this Supermodel is an <a href="#OWL">OWL</a> model, formulated according to the <a href="#PROF">Profiles Vocabulary</a> and is online at:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong><a href="https://linked.data.gov.au/def/qsi-supermodel.ttl" class="bare">https://linked.data.gov.au/def/qsi-supermodel.ttl</a></strong></p>
+</li>
+</ul>
+</div>
+<div id="fig-models" class="imageblock">
+<div class="content">
+<img src="images/models.png" alt="models">
+</div>
+<div class="title">Figure 5. An informal diagram the part Models of this Supermodel. The Administrative Areas model is not yet defined.</div>
+</div>
+<div class="paragraph">
+<p>For technical use, the machine-readable versions of the Backbone Model and the Component Models can be combined and used as the total Supermodel.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_backbone_model"><a class="anchor" href="#_backbone_model"></a>3.2. Backbone Model</h3>
+<div class="paragraph">
+<p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The elements of the Backbone Model are described next and the formal characterisation of the model in OWL is given in the machein-readable file <a href="https://spatial-information-qld.github.io/supermodel/backbone/model.ttl">backbone.ttl</a>.</p>
+</div>
+<div id="fig-backbone" class="imageblock">
+<div class="content">
+<img src="images/backbone.png" alt="backbone">
+</div>
+<div class="title">Figure 6. An OWL diagram of the Backbone Model overview. Uncertain objects are shown in light red.</div>
+</div>
+<div class="paragraph">
+<p>Figure 2 indicates two main conceptual domains (the yellow and blue) centered on <code>Feature Labels</code> (defined here) and <code>geo:Feature</code> s which are "Anything spatial (being or having a shape, position or an extent)" <a href="#GEO">[GeoSPARQL]</a>. Feature Labels are any form of identifying information assigned to a Feature <a href="#xxx">[xxx]</a>.</p>
+</div>
+<div class="paragraph">
+<p>The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Address</code>, <code>AdministrativeArea</code> and perhaps <code>Title`</code> are all specialised forms of <code>FeatureLabel</code></p>
+</li>
+<li>
+<p><code>GeographicalName</code> is a form of <code>Address</code> (a very simple one!)</p>
+</li>
+<li>
+<p><code>Geographical Objects</code> are a specialised form of <code>AddressableObject</code> and <code>AddressableObject</code> and <code>Parcel</code>, and others, are speciali types of <code>geo:Feature</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The various Component Models (next) use these classes of object and imlplement many more specilised forms of them.</p>
+</div>
+<div class="sect3">
+<h4 id="_classes"><a class="anchor" href="#_classes"></a>3.2.1. Classes</h4>
+<div class="paragraph">
+<p>This Backbone Model only defines one class of object not already defined in the various Component models: <code>FeatureLabel</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="FeatureLabel"><a class="anchor" href="#FeatureLabel"></a>Feature Label</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bb:FeatureLabel</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An annotation applied to a <code>Feature</code>. Specialised kinds of FeatureLabel are expected to be used, such as <code>Address</code> or <code>GeographicalName</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/qsi-supermodel/backbone">SQI Supermodel Backbone Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isLabelFor">is label for</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle"># The Label "Mount Doom" is applied to Feature X
+ex:fl-01
+    a bb:FeatureLabel ;
+    rdfs:label "Mount Doom" ;
+    bb:isLabelFor ex:feature-x ;
+.
+
+ex:feature-x
+    a geo:Feature ;
+    ex:category ex:mountain ;
+.</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_properties"><a class="anchor" href="#_properties"></a>3.2.2. Properties</h4>
+<div class="paragraph">
+<p>This Backbone Model only defines one property not already defined in the various Component models: <code>isLabelFor</code>.</p>
+</div>
+<div class="sect4">
+<h5 id="_is_label_for"><a class="anchor" href="#_is_label_for"></a>is label for</h5>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bb:isLabelFor</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is label for</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an an object that a <a href="#FeatureLabel"><code>FeatureLabel</code></a> is an annotation for</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/qsi-supermodel/backbone">SQI Supermodel Backbone Model</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub property of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs:label</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabel"><code>FeatureLabel</code></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:Feature</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>see the example for <a href="#FeatureLabel">Feature Label</a></em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>3.3. Component Models</h3>
+<div class="sect3">
+<h4 id="_anz_national_address_model"><a class="anchor" href="#_anz_national_address_model"></a>3.3.1. ANZ National Address Model</h4>
+<div class="paragraph">
+<p>The Address Model is a model that has been defined externally to this Supermodel.</p>
+</div>
+<div class="paragraph">
+<p>It is available online at:</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://linked.data.gov.au/def/addr" class="bare">https://linked.data.gov.au/def/addr</a></strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_geographical_names_model"><a class="anchor" href="#_geographical_names_model"></a>3.3.2. Geographical Names Model</h4>
+<div class="paragraph">
+<p>The Geographical Names Model is a model that has been defined externally to this Supermodel.</p>
+</div>
+<div class="paragraph">
+<p>It is available online at:</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://linked.data.gov.au/def/placenames" class="bare">https://linked.data.gov.au/def/placenames</a></strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_roads_model"><a class="anchor" href="#_roads_model"></a>3.3.3. Roads Model</h4>
+<div class="paragraph">
+<p>The Roads Model is a model that has been defined externally to this Supermodel.</p>
+</div>
+<div class="paragraph">
+<p>It is available online at:</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://linked.data.gov.au/def/roads" class="bare">https://linked.data.gov.au/def/roads</a></strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cadastre_model"><a class="anchor" href="#_cadastre_model"></a>3.3.4. Cadastre Model</h4>
+<div class="paragraph">
+<p>The Cadastre Model is a model that has been defined externally to this Supermodel.</p>
+</div>
+<div class="paragraph">
+<p>It is available online at:</p>
+</div>
+<div class="paragraph">
+<p><strong><a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="PIDs"><a class="anchor" href="#PIDs"></a>Annex A: PID Rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section provide the policy for the creation of Persistent Identifiers (PIDs) for objects within the scope of this Supermodel.</p>
+</div>
+<div class="sect2">
+<h3 id="_type"><a class="anchor" href="#_type"></a>Type</h3>
+<div class="paragraph">
+<p>PIDs within this Supermodel are <a href="#IRI">IRIs</a> which means they are typically represented like an Internet web address:</p>
+</div>
+<div class="paragraph">
+<p><code>{SCHEME}://{AUTHORITY}/{PATH}</code></p>
+</div>
+<div class="paragraph">
+<p>e.g. - the PID for this Supermodel:</p>
+</div>
+<div class="paragraph">
+<p><code>https://linked.data.gov.au/def/qsi-supermodel</code></p>
+</div>
+<div class="paragraph">
+<p>where the <strong>SCHEME</strong> is the <code>HTTPS</code> protocol, the <strong>AUTHORITY</strong> is <code>linked.data.gov.au</code> and the <strong>PATH</strong> is <code>def/qsi-supermodel</code>.</p>
+</div>
+<div class="paragraph">
+<p>IRIs in this form should be quoted in full wherever possible, i.e. within datasets, exchange data and documents.</p>
+</div>
+<div class="paragraph">
+<p>This IRI for this Supermodel does indeed resolve as a web address, to this document:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://linked.data.gov.au/def/qsi-supermodel" class="bare">https://linked.data.gov.au/def/qsi-supermodel</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authority"><a class="anchor" href="#_authority"></a>Authority</h3>
+<div class="paragraph">
+<p>The authority for all identifiers used in this Supermodel is <code>linked.data.gov.au</code> which is the Internet domain name allocated to the <a href="https://www.linked.data.gov.au">Australian Government Linked Data Working Group (AGLDWG)</a> expressly for the purpose of creating IRI PIDs for Australian government.</p>
+</div>
+<div class="paragraph">
+<p>PIDs using <code>linked.data.gov.au</code> must be registered with the AGLDWG.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_non_iri_representation"><a class="anchor" href="#_non_iri_representation"></a>Non-IRI Representation</h3>
+<h4 id="_in_concept" class="discrete">In Concept</h4>
+<div class="paragraph">
+<p>Where an object cannot be identified with an IRI - perhaps the underlying technical system cannot store full web addresses - it may have an IRI substitute use which must consist of 2 data fields:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Object Identifier</p>
+</li>
+<li>
+<p>System Identifier</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <strong>Object Identifier</strong> part can be anything used to uniquely identify the object within the context of the system identified by the System Identifier, for example an auto-incrementing number, a structured number, a string or a UUID.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Since Object Identifiers are managed by individual systems, implementers of those systems may choose to indicate, or not, object classes within them, as long as all Object Identifiers managed by that system are unique within its context.</p>
+</div>
+<div class="paragraph">
+<p>For example, <code>Address</code> and <code>Address Part</code> objects, within the <a href="#ADDR">Address Model</a>, may have Object Identifiers of the form <code>address/UUID</code> &amp; <code>addressPart/UUID</code>, or just <code>UUID</code>, since unique UUIDs creation can be assured, even for un-synchronised creation methods.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <strong>System Identifier</strong> is the unique identifier for the system generating the Object Identifiers. It must be recorded in the table of <a href="#_known_systems">Known Systems</a>, below.</p>
+</div>
+<div class="paragraph">
+<p>For each system identified in the <a href="#_known_systems">Known Systems</a> table below, a System PID Namespace is allocated. To assemble the IRI PID, the following logic is used:</p>
+</div>
+<div class="paragraph">
+<p><code>IRI  PID :== System PID Namespace / "dataset" / Object Identifier</code></p>
+</div>
+<div class="paragraph">
+<p>For the Queensland Addressing &amp; Location Information (QALI) system, the System Identifier is <code>qali</code> and the System PID Namespace is <code><a href="https://linked.data.gov.au/dataset/qld-addr" class="bare">https://linked.data.gov.au/dataset/qld-addr</a></code>, thus, for the Address with Object Identifier <code>address/605bf8e7-315a-562b-af4c-16a870732daf</code>, a class marker of "address" and a UUID, the complete IRI PID is:</p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://linked.data.gov.au/dataset/qld-addr/address/605bf8e7-315a-562b-af4c-16a870732daf" class="bare">https://linked.data.gov.au/dataset/qld-addr/address/605bf8e7-315a-562b-af4c-16a870732daf</a></code></p>
+</div>
+<h4 id="_in_rdf_data" class="discrete">In RDF data</h4>
+<div class="paragraph">
+<p>Where a PID is represented in non IRI form and this must be stored in the RDF format, for example for exchange according to the <a href="#ADDR">Address Model</a>, the <strong>Object Identifier</strong> must be represented as a literal with a custom datatype of the <strong>System Identifier</strong> and indicated with the <code>schema:identifier</code> if in an ontology or a dataset or <code>skos:notation</code> if in a vocabulary. For the address in the example above, this would look like the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-turtle" data-lang="turtle">&lt;...&gt;
+    a addr:Address ;
+    schema:identifier "address/605bf8e7-315a-562b-af4c-16a870732daf"^^&lt;https://linked.data.gov.au/dataset/qld-addr&gt; ;
+.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kinds"><a class="anchor" href="#_kinds"></a>Kinds</h3>
+<div class="paragraph">
+<p>The following kinds of PID are to be allocated to data objects in this Supermodel:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>high-level definitional object</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>the Supermodel itself</p>
+</li>
+<li>
+<p>whole models and vocabularies within the Supermodel</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>low-level definitional object</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Classes, Concepts, Predicates &amp; Datatypes defined within models and vocabularies</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>high-level data object</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>whole datasets of content created in accordance with this Supermodel</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>low-level data object</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>objects within datasets</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_definitional_pids"><a class="anchor" href="#_definitional_pids"></a>Definitional PIDs</h3>
+<div class="paragraph">
+<p>Models and vocabularies within this Supermodel, and the Supermodel itself, are assigned <em>high-level definitional object</em> PIDs as per the table below and allocate <em>low-level definitional object</em> PIDs within their namespaces.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">PID Namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>qsi-supermodel</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The QSI Supermodel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/qsi-supermodel" class="bare">https://linked.data.gov.au/def/qsi-supermodel</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>addr</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/addr" class="bare">https://linked.data.gov.au/def/addr</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cad</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cadastral Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>csdm</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cadastral Survey Data Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/csdm" class="bare">https://linked.data.gov.au/def/csdm</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>gn</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geographical Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/gn" class="bare">https://linked.data.gov.au/def/gn</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>roads</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Road Names Model</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/roads" class="bare">https://linked.data.gov.au/def/roads</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>ICSM Address Vocabularies</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>address-classes</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Classes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/address-classes" class="bare">https://linked.data.gov.au/def/address-classes</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>subaddress-types</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/subaddress-types" class="bare">https://linked.data.gov.au/def/subaddress-types</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>address-status-type</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Status Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/address-status-type" class="bare">https://linked.data.gov.au/def/address-status-type</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>address-level-types</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Address Level Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/address-level-types" class="bare">https://linked.data.gov.au/def/address-level-types</a></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geocode-types</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geocode Types</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/geocode-types" class="bare">https://linked.data.gov.au/def/geocode-types</a></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_known_systems"><a class="anchor" href="#_known_systems"></a>Known Systems</h3>
+<div class="paragraph">
+<p>The following are all the known systems creating identifiers for data within the scope of this Supermodel as well as known class markers used by them. The systems use <em>high-level data object</em> PIDs for their major datasets and <em>low-level data object</em> PIDs for each element of those datasets.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">NOTE</dt>
+<dd>
+<p>It is not necessary for systems to use unique PID Namespaces as long as unique Object Identifier creation can be guaranteed across all systems sharing a PID Namespace. Systems may also be allocated more than one PID Namespace if, for example, the are responsible for more than one distinct conceptual dataset.</p>
+</dd>
+</dl>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 22.2222%;">
+<col style="width: 44.4444%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">PID Namespace</th>
+<th class="tableblock halign-left valign-top">Class Markers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>qali</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Queensland Addressing &amp; Location Information (QALI)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/qld-addr" class="bare">https://linked.data.gov.au/dataset/qld-addr</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>address</code>
+<code>geocode</code>
+<code>gn</code>
+<code>road-label</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sir</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spatial Information Repository (SIR)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/dataset/qld-cad" class="bare">https://linked.data.gov.au/dataset/qld-cad</a></code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>line</code>
+<code>parcel</code>
+<code>point</code>
+<code>property</code>
+<code>record</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><mark>Unresolved Questions</mark></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>where to Road, not Road Name, IDs come from?</p>
+</li>
+<li>
+<p>where do Property (Parcel Aggregate) IDs come from?</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pid_representation"><a class="anchor" href="#_pid_representation"></a>PID representation</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Validation"><a class="anchor" href="#Validation"></a>Annex B: Validation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><mark>Coming Soon</mark></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="ADDR"></a> [Address Model]</dt>
+<dd>
+<p>Intergovernmental Committee on Surveying &amp; Mapping. <em>Address Model</em>, 2024. Semantic Web model. <a href="https://linked.data.gov.au/def/addr" class="bare">https://linked.data.gov.au/def/addr</a></p>
+</dd>
+<dt class="hdlist1"><a id="CAD"></a> [Cadastre Model]</dt>
+<dd>
+<p>Intergovernmental Committee on Surveying &amp; Mapping. <em>Cadastre Model</em>, 2024. Proposed Semantic Web model. <a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></p>
+</dd>
+<dt class="hdlist1"><a id="CN"></a> [Compound Naming Model]</dt>
+<dd>
+<p>Australian Government Linked Data Working Group, <em>Compound Naming Model</em> 2023. Semantic Web model. <a href="https://linked.data.gov.au/def/cn" class="bare">https://linked.data.gov.au/def/cn</a></p>
+</dd>
+<dt class="hdlist1"><a id="GEO"></a> [GeoSPARQL]</dt>
+<dd>
+<p>Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em>, OGC® Implementation Specification (2024). <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><a id="GN"></a> [Cadastre Model] Intergovernmental Committee on Surveying &amp; Mapping. <em>Geographical Names Model</em>, 2024. Proposed Semantic Web model. <a href="https://linked.data.gov.au/def/gn" class="bare">https://linked.data.gov.au/def/gn</a></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="ISO19125-1"></a> [ISO19125-1]</dt>
+<dd>
+<p>International Organization for Standardization, <em>ISO 19125-1: Geographic information — Simple Feature Access - Part 1: Common Architecture</em>, 2004. <a href="https://www.iso.org/standard/40114.html" class="bare">https://www.iso.org/standard/40114.html</a></p>
+</dd>
+<dt class="hdlist1"><a id="OWL"></a> [OWL]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
+</dd>
+<dt class="hdlist1"><a id="PROF"></a> [Profiles Vocabulary]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>The Profiles Vocabulary</em>, W3C Working Group Note (18 December 2019). <a href="https://www.w3.org/TR/dx-prof/" class="bare">https://www.w3.org/TR/dx-prof/</a></p>
+</dd>
+<dt class="hdlist1"><a id="ROAD"></a> [Road Names Model]</dt>
+<dd>
+<p>Intergovernmental Committee on Surveying &amp; Mapping. <em>Road Names Model</em>, 2024. Proposed Semantic Web data model. <a href="https://linked.data.gov.au/def/roads" class="bare">https://linked.data.gov.au/def/roads</a></p>
+</dd>
+<dt class="hdlist1"><a id="SDO"></a> [schema.org]</dt>
+<dd>
+<p>W3C Schema.org Community Group, <em>schema.org</em> 2015. Semantic Web model. <a href="https://schema.org" class="bare">https://schema.org</a></p>
+</dd>
+<dt class="hdlist1"><a id="SKOS"></a> [SKOS]</dt>
+<dd>
+<p>World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System</em> 18 August 2009. Semantic Web model. <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-07-22 23:03:11 UTC
+Last updated 2025-07-22 23:18:36 UTC
 </div>
 </div>
 </body>
