@@ -17,7 +17,7 @@ As of July 2025, this Supermodel is used for data integrations only.
 
 [NOTE]
 ====
-This Supermodel is demonstrated through the https://eia.testing.bdr.gov.au/[EIA Test Catalogue], online via the Biodiversity Data Repository's infrastructure.
+This Supermodel is demonstrated through the https://eia.testing.bdr.gov.au[EIA Test Catalogue], online via the Biodiversity Data Repository's infrastructure.
 ====
 
 == Metadata
@@ -28,7 +28,7 @@ This Supermodel is demonstrated through the https://eia.testing.bdr.gov.au/[EIA 
 |**Title** | EIA Supermodel
 |**Description** | This is an overarching model - a Supermodel - used to integrate multiple, individual, models together for use within a particular scenario.
 |**Created** | 2025-02-15
-|**Modified** | 2025-07-30
+|**Modified** | 2025-08-04
 |**Issued** | 0000-00-00 - not in production use yet
 |**Version** | 1
 |**Creator** | https://kurrawong.ai[KurrawongAI], for DCCEEW
@@ -55,16 +55,19 @@ The target datasets for this work were several within DCCEEW's _Environmental In
 
 === Dataset Scope
 
-The scope of this Supermodel was set within its establishment project to be 6 DCCEEW datasets:
+The scope of this Supermodel was set within its establishment project to initially cover data from 7 DCCEEW datasets:
 
 1. https://www.dcceew.gov.au/environment/environment-information-australia/national-vegetation-information-system[National Vegetation Information system (NVIS)]
 2. https://www.dcceew.gov.au/environment/biodiversity/threatened[Species Risks Assessment Tool (SPRAT)]
 3. https://fed.dcceew.gov.au/maps/13cce3e3f8f947d487ef788cdf5a0165/about[Habitat Condition Assessment System (HCAS)]
 4. https://doi.org/10.1038/s41597-021-01006-6[Australian National Flora Traits (AusTraits)]
 5. https://ansis.net[Australian National Soil Information System (ANSIS)]
-6. https://bdr.gov.au[Biodiversity Data Repository]
+6. https://bdr.gov.au[Biodiversity Data Repository (BDR)]
+7. https://biodiversity.org.au[National Species List (NSL)]
 
-This Supermodel contains _Component Models_ and partial, demonstration, datasets for each of these 6 EIA datasets, as well as 20+ supporting assets - background datasets, vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.
+This Supermodel contains _Component Models_ and partial, demonstration, datasets for each of these datasets, as well as 20+ supporting assets - background datasets, vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.
+
+Together, the _Component Models_, _Background Models_ and other Supermodel elements allow all the parts of the DCCEEW datasets to be integrated with all other parts, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together with common data structure and reference values.
 
 === Modelling System
 
@@ -76,9 +79,9 @@ The Supermodel's constituent models are related to one another using <<PROF, _Th
 
 The technical presentation of data modelled in OWL is in <<RDF>> which is a graph ('node-edge-node') data structure. RDF allows models and data according to the models to be stored in files or databases of the same sort. RDF is also infinitely extensible, allowing for not just model change and growth but for easy schema change and growth too.
 
-=== Patterns
+=== Use of Patterns
 
-Integrated use of multiple Component Models depends on each of them implementing, or mapping to, model elements in the Background Models referred to as <<pattern, patterns>>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however
+Integrated use of multiple Component Models depends on each of them implementing, or mapping to, model elements in the Background Models referred to as <<pattern, patterns>>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <<Patterns, Patterns>> section lists a set of patterns that covers the scoped datasets' implementation at least once over completely.
 
 === Validation
 
@@ -86,7 +89,7 @@ For demonstrable interoperability, this Supermodel contains data validators for 
 
 Some of the validators for the models within this Supermodel were created by the original model implementors, e.g. ABIS, but others have had validators created for this through the EIA Demonstrator project.
 
-All the validators used within this Supermodel are implemented in <<SHACL, SHACL>>, an <<RDF>> data validation language.
+The <<Validators, Validators>> section below lists all the validators relevant to this Supermodel and indicates their dependencies. It also includes a union validator that combines all the others and can be used to validate any data wishing to conform to this Supermodel.
 
 === Definitions
 
@@ -112,166 +115,96 @@ Vocabulary:: A controlled set of defined terms. Within Supermodel contexts, all 
 
 Web Ontology Language, OWL:: A widely used international standard modelling language that allows for machine-readability of models.
 
-== Models
+=== Machine-readable form
 
-=== Supermodel
-
-This Supermodel is the total set models listed here.
-
-==== Human-readable Form
-
-This document contains the normative, human-readable description of the Supermodel.
-
-The Supermodel is the total set of models listed below and is also conceived of as a <<profile, profile>> of the total set.
-
-The models within this Supermodel and the roles they play are listed in the table below.
-
-[cols="1,3,2,2"]
-|===
-|Name | Description | Role | PID
-
-|Address Model | ... | <<CM, Component Model>> | `https://linked.data.gov.au/def/addr`
-|Geographical Names Model | ... | <<CM, Component Model>> | `https://linked.data.gov.au/def/gn`
-|Road Names Model | ... | <<CM, Component Model>> | `https://linked.data.gov.au/def/roads`
-|Cadastral Model | ... | <<CM, Component Model>> | `https://linked.data.gov.au/def/cad`
-|Cadastral Survey Data Model | ... | <<CM, Component Model>> | `https://linked.data.gov.au/def/csdm`
-|===
-
-==== Machine-readable Form
-
-The machine-readable form of this Supermodel is an <<OWL, OWL>> model, formulated according to the <<PROF, Profiles Vocabulary>> and is online at:
+Like all the models within this Supermodel, the Supermodel itself has a machine-readable form that lists and relates all its elements:
 
 * **https://linked.data.gov.au/def/eia-supermodel.ttl**
 
+== Patterns
 
 
-[id=fig-models]
-.An informal diagram the part Models of this Supermodel. The Administrative Areas model is not yet defined.
-image::images/models.png[]
 
-For technical use, the machine-readable versions of the Backbone Model and the Component Models can be combined and used as the total Supermodel.
-
-=== Backbone Model
-
-The Backbone Model for this Queensland Spatial Information scenario overviewed in <<#fig-backbone, Figure 3>>. The elements of the Backbone Model are described next and the formal characterisation of the model in OWL is given in the machein-readable file https://spatial-information-qld.github.io/supermodel/backbone/model.ttl[backbone.ttl].
-
-[id=fig-backbone]
-.An OWL diagram of the Backbone Model overview. Uncertain objects are shown in light red.
-image::images/backbone.png[]
-
-Figure 2 indicates two main conceptual domains (the yellow and blue) centered on `Feature Labels` (defined here) and `geo:Feature` s which are "Anything spatial (being or having a shape, position or an extent)" <<GEO>>. Feature Labels are any form of identifying information assigned to a Feature <<xxx>>.
-
-The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:
-
-* `Address`, `AdministrativeArea` and perhaps `Title`` are all specialised forms of `FeatureLabel`
-* `GeographicalName` is a form of `Address` (a very simple one!)
-* `Geographical Objects` are a specialised form of `AddressableObject` and `AddressableObject` and `Parcel`, and others, are speciali types of `geo:Feature`
-
-The various Component Models (next) use these classes of object and imlplement many more specilised forms of them.
-
-==== Classes
-
-This Backbone Model only defines one class of object not already defined in the various Component models: `FeatureLabel`.
-
-[[FeatureLabel]]
-===== Feature Label
-
-[cols="1,4"]
-|===
-| Property | Value
-
-| IRI | `bb:FeatureLabel`
-| Preferred Label | Feature Label
-| Definition | An annotation applied to a `Feature`. Specialised kinds of FeatureLabel are expected to be used, such as `Address` or `GeographicalName`
-| Is Defined By | https://linked.data.gov.au/def/eia-supermodel/backbone[SQI Supermodel Backbone Model]
-| Provenance | Derived from <<ISO19160-1>>'s `AddressLifecycle` class
-| Expected Properties | <<isLabelFor, is label for>>
-| Example 
-a| [source,turtle]
-----
-# The Label "Mount Doom" is applied to Feature X
-ex:fl-01
-    a bb:FeatureLabel ;
-    rdfs:label "Mount Doom" ;
-    bb:isLabelFor ex:feature-x ;
-.
-
-ex:feature-x
-    a geo:Feature ;
-    ex:category ex:mountain ;
-.
-----
-|===
-
-==== Properties
-
-This Backbone Model only defines one property not already defined in the various Component models: `isLabelFor`.
-
-===== is label for
-
-[cols="1,4"]
-|===
-| Property | Value
-
-| IRI | `bb:isLabelFor`
-| Preferred Label | is label for
-| Definition | Indicates an an object that a <<FeatureLabel, `FeatureLabel`>> is an annotation for
-| Is Defined By | https://linked.data.gov.au/def/eia-supermodel/backbone[SQI Supermodel Backbone Model]
-| Sub property of | `rdfs:label`
-| Domain | <<FeatureLabel, `FeatureLabel`>>
-| Range | `geo:Feature`
-| Example | _see the example for <<FeatureLabel>>_
-|===
+== Models
 
 === Component Models
 
-==== ANZ National Address Model
+Of the 7 Datasets in this Supermodel's <<Dataset Scope, scope>>:
 
-The Address Model is a model that has been defined externally to this Supermodel.
+AusTraits:: follows an international domain ontology, <<ETS, Ecological Trait-data Standard>> compatible with this Supermodel
+BDR:: implements an Australian Semantic Web data exchange standard, <<ABIS, ABIS>> which this Supermodel incorporates
+ANSIS & NSL:: have purpose-built ontologies, <<ANSISO, ANSIS Ontology>> & <<NSLMODEL, NSL Model>> compatible with ABIS and this Supermodel
+NVIS & HCAS:: don't need Component Models as their concerns can be represented using this Supermodel's Background Models
 
-It is available online at:
+Only one dataset, SPRAT, is not yet bound in to the Supermodel by one of the methods applied to the other 6. This is planned to happen soon.
 
-**https://linked.data.gov.au/def/addr**
+=== Background Models
 
-==== Geographical Names Model
+== Vocabularies
 
-The Geographical Names Model is a model that has been defined externally to this Supermodel.
+Some of the vocabularies within this Supermodel are relevant to all datasets within this Supermodel's data <<Dataset Scope, scope>>, others just to particular Component Models.
 
-It is available online at:
+Those relevant to all datasets are required for use by the <<EIADP, EIA Data Profile>> and are:
 
-**https://linked.data.gov.au/def/placenames**
+* http://vocabs.lter-europe.net/EnvThes[EnvThes]
+** "a set of terms in order to describe in a harmonised way data resulting from observations and measurements of ecosystem processes across different domain specific sciences"
+* https://linked.data.gov.au/eia-dk[EIA Data Kinds Vocabulary]
 
-==== Roads Model
+Each dataset claiming conformance to this Supermodel must be classified according to at least one EnvThes term
 
-The Roads Model is a model that has been defined externally to this Supermodel.
+The vocabularies relevant to individual Component Models and Background Models are defined by those models, however, here is a table of many of them and the models to which they are relevant:
 
-It is available online at:
+|===
+| Model / Dataset | Vocabulary
 
-**https://linked.data.gov.au/def/roads**
+| ANSIS  / <<ANSISO, ANSIS Ontology |
+Land Surface classifiers
+Soil Profile classifiers
+Substrate classifiers
+Australian Land Use and Management Classification
+| - / NVIS | NVIS Major Vegetation Groups and Major Vegetation Subgroups
 
-==== Cadastre Model
 
-The Cadastre Model is a model that has been defined externally to this Supermodel.
+AusTraits Plant Dictionary glossary
 
-It is available online at:
 
-**https://linked.data.gov.au/def/cad**
+|===
 
-:!sectnums:
+
+
+== Validators
+
+The validators relevant to this Supermodel come from a range of sources and some derive from and extend on others. The following table lists all of them with derivation notes.
+
+|===
+| Validator | Derived From | Relevant Models | Notes
+
+| ABIS Validators | <<ABIS, ABIS>> | ABIS | Validates all aspects of ABIS data from
+| <<LOCIDP, Loc-I Data Profile>> | <<DCAT, DCAT>> | DCAT, <<SDO, schema.org>> | Requires minimum metadata for catalogued datasets containing spatial data
+| <<EIADP, EIA Data Profile>> | Loc-I Data Profile | DCAT, schema.org | Requires minimum environmental domain dataset metadata
+| GeoSPARQL 1.1 validator | <<GEO, GeoSPARQL>> | GeoSPARQL | Basic GeosPARQL validation
+| <<VOCPUB, VocPub>> | DCAT, <<SKOS, SKOS>> | DCAT, SKOS | Requires minimum cataloguing metadata and structural composition for SKOS vocabularies
+|===
+
+All the validators used within this Supermodel are implemented in <<SHACL, SHACL>>, an <<RDF>> data validation language and validation of data may be carried out as per the https://linked.data.gov.au/def/abis#_performing_validation[ABIS' _Performing Validation_] section.
 
 == References
 
-[[ADDR]] Address Model:: Intergovernmental Committee on Surveying & Mapping. _Address Model_, 2024. Semantic Web model. https://linked.data.gov.au/def/addr
+[[ABIS]] ABIS: Australian Biodiversity Information Governance Group, _Australian Biodiversity Information Standard_. Australian government data standard (4 December 2023). https://linked.data.gov.au/def/abis
 
-[[CAD]] Cadastre Model:: Intergovernmental Committee on Surveying & Mapping. _Cadastre Model_, 2024. Proposed Semantic Web model. https://linked.data.gov.au/def/cad
+[[ANSISO]] ANSISO:: Megan Wong & Simon JD Cox, _ANSIS Ontology_. Community proposed data standard (21 July 2022). https://raw.githack.com/ANZSoilData/def-au-domain/main/doc/domain.html[https://anzsoil.org/def/au/domain]
 
-[[CN]] Compound Naming Model:: Australian Government Linked Data Working Group, _Compound Naming Model_ 2023. Semantic Web model. https://linked.data.gov.au/def/cn
+[[DCAT]] DCAT:: World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 3_, W3C Recommendation (22 August 2024). https://www.w3.org/TR/vocab-dcat-3/
+
+[[EIADP]] EIADP:: Department of Climate Change, Energy and the Environment, _EIA Data Profile_, Community proposed data standard (15 May 2025), https://linked.data.gov.au/def/eia-dp
+
+[[ETS]] ETS:: Schneider, F.D., Jochum, M., Le Provost, G., Ostrowski, A., Penone, C. and Simons, N.K., _Ecological Trait-data Standard_ v0.10, Community data standard (28 March 2019) https://doi.org/10.5281/zenodo.2605377
 
 [[GEO]] GeoSPARQL:: Open Geospatial Consortium, _OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1_, OGC® Implementation Specification (2024). http://www.opengis.net/doc/IS/geosparql/1.1
 
-[[GN]] Cadastre Model:: Intergovernmental Committee on Surveying & Mapping. _Geographical Names Model_, 2024. Proposed Semantic Web model. https://linked.data.gov.au/def/gn
+[[LOCIDP]] LOCIDP:: Geoscience Australia, _Loc-I Data Profile_, Semantic Web profile (3 April 2021). https://linked.data.gov.au/def/loci-dp
 
-[[ISO19125-1]] ISO19125-1:: International Organization for Standardization, _ISO 19125-1: Geographic information — Simple Feature Access - Part 1: Common Architecture_, 2004. https://www.iso.org/standard/40114.html
+[[NSLMODEL]] NSLMODEL: Centre for Australian National Biodiversity Research, _National Species List - Semantic Web Model_ (15 October 2023). https://linked.data.gov.au/def/nsl
 
 [[OWL]] OWL:: World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
 
@@ -279,10 +212,10 @@ It is available online at:
 
 [[RDF]] RDF:: World Wide Web Consortium, _RDF 1.1 Concepts and Abstract Syntax_, W3C Recommendation (25 February 2014). https://www.w3.org/TR/rdf11-concepts/
 
-[[ROAD]] Road Names Model:: Intergovernmental Committee on Surveying & Mapping. _Road Names Model_, 2024. Proposed Semantic Web data model. https://linked.data.gov.au/def/roads
-
-[[SDO]] schema.org:: W3C Schema.org Community Group, _schema.org_ 2015. Semantic Web model. https://schema.org
+[[SDO]] schema.org:: W3C Schema.org Community Group, _schema.org_, Semantic Web model (2015). https://schema.org
 
 [[SHACL]] SHACL:: World Wide Web Consortium, _Shapes Constraint Language (SHACL)_, W3C Recommendation (20 July 2017). https://www.w3.org/TR/shacl/
 
-[[SKOS]] SKOS:: World Wide Web Consortium, _SKOS Simple Knowledge Organization System_ 18 August 2009. Semantic Web model. https://www.w3.org/TR/skos-reference/
+[[SKOS]] SKOS:: World Wide Web Consortium, _SKOS Simple Knowledge Organization System_, W3C Recommendation (18 August 2009). Semantic Web model. https://www.w3.org/TR/skos-reference/
+
+[[VOCPUB]] VOCPUB:: Australian Government Linked Data Working Group, _VocPub Profile of SKOS_, Australian community standard (2020). https://linked.data.gov.au/def/vocpub
