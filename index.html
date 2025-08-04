@@ -447,36 +447,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_this_supermodels_origins">2.2. This Supermodel&#8217;s Origins</a></li>
 <li><a href="#_dataset_scope">2.3. Dataset Scope</a></li>
 <li><a href="#_modelling_system">2.4. Modelling System</a></li>
-<li><a href="#_patterns">2.5. Patterns</a></li>
+<li><a href="#_use_of_patterns">2.5. Use of Patterns</a></li>
 <li><a href="#_validation">2.6. Validation</a></li>
 <li><a href="#_definitions">2.7. Definitions</a></li>
+<li><a href="#_machine_readable_form">2.8. Machine-readable form</a></li>
 </ul>
 </li>
-<li><a href="#_models">3. Models</a>
+<li><a href="#_patterns">3. Patterns</a></li>
+<li><a href="#_models">4. Models</a>
 <ul class="sectlevel2">
-<li><a href="#_supermodel">3.1. Supermodel</a>
-<ul class="sectlevel3">
-<li><a href="#_human_readable_form">3.1.1. Human-readable Form</a></li>
-<li><a href="#_machine_readable_form">3.1.2. Machine-readable Form</a></li>
+<li><a href="#_component_models">4.1. Component Models</a></li>
+<li><a href="#_background_models">4.2. Background Models</a></li>
 </ul>
 </li>
-<li><a href="#_backbone_model">3.2. Backbone Model</a>
-<ul class="sectlevel3">
-<li><a href="#_classes">3.2.1. Classes</a></li>
-<li><a href="#_properties">3.2.2. Properties</a></li>
-</ul>
-</li>
-<li><a href="#_component_models">3.3. Component Models</a>
-<ul class="sectlevel3">
-<li><a href="#_anz_national_address_model">3.3.1. ANZ National Address Model</a></li>
-<li><a href="#_geographical_names_model">3.3.2. Geographical Names Model</a></li>
-<li><a href="#_roads_model">3.3.3. Roads Model</a></li>
-<li><a href="#_cadastre_model">3.3.4. Cadastre Model</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_references">References</a></li>
+<li><a href="#_vocabularies">5. Vocabularies</a></li>
+<li><a href="#_validators">6. Validators</a></li>
+<li><a href="#_references">7. References</a></li>
 </ul>
 </div>
 </div>
@@ -507,7 +493,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This Supermodel is demonstrated through the <a href="https://eia.testing.bdr.gov.au/">EIA Test Catalogue</a>, online via the Biodiversity Data Repository&#8217;s infrastructure.</p>
+<p>This Supermodel is demonstrated through the <a href="https://eia.testing.bdr.gov.au">EIA Test Catalogue</a>, online via the Biodiversity Data Repository&#8217;s infrastructure.</p>
 </div>
 </td>
 </tr>
@@ -542,7 +528,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-07-30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-08-04</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
@@ -599,7 +585,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_dataset_scope"><a class="anchor" href="#_dataset_scope"></a>2.3. Dataset Scope</h3>
 <div class="paragraph">
-<p>The scope of this Supermodel was set within its establishment project to be 6 DCCEEW datasets:</p>
+<p>The scope of this Supermodel was set within its establishment project to initially cover data from 7 DCCEEW datasets:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -619,12 +605,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><a href="https://ansis.net">Australian National Soil Information System (ANSIS)</a></p>
 </li>
 <li>
-<p><a href="https://bdr.gov.au">Biodiversity Data Repository</a></p>
+<p><a href="https://bdr.gov.au">Biodiversity Data Repository (BDR)</a></p>
+</li>
+<li>
+<p><a href="https://biodiversity.org.au">National Species List (NSL)</a></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>This Supermodel contains <em>Component Models</em> and partial, demonstration, datasets for each of these 6 EIA datasets, as well as 20+ supporting assets - background datasets, vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.</p>
+<p>This Supermodel contains <em>Component Models</em> and partial, demonstration, datasets for each of these datasets, as well as 20+ supporting assets - background datasets, vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.</p>
+</div>
+<div class="paragraph">
+<p>Together, the <em>Component Models</em>, <em>Background Models</em> and other Supermodel elements allow all the parts of the DCCEEW datasets to be integrated with all other parts, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together with common data structure and reference values.</p>
 </div>
 </div>
 <div class="sect2">
@@ -643,9 +635,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_patterns"><a class="anchor" href="#_patterns"></a>2.5. Patterns</h3>
+<h3 id="_use_of_patterns"><a class="anchor" href="#_use_of_patterns"></a>2.5. Use of Patterns</h3>
 <div class="paragraph">
-<p>Integrated use of multiple Component Models depends on each of them implementing, or mapping to, model elements in the Background Models referred to as <a href="#pattern">patterns</a>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however</p>
+<p>Integrated use of multiple Component Models depends on each of them implementing, or mapping to, model elements in the Background Models referred to as <a href="#pattern">patterns</a>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <a href="#_patterns">Patterns</a> section lists a set of patterns that covers the scoped datasets' implementation at least once over completely.</p>
 </div>
 </div>
 <div class="sect2">
@@ -657,7 +649,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Some of the validators for the models within this Supermodel were created by the original model implementors, e.g. ABIS, but others have had validators created for this through the EIA Demonstrator project.</p>
 </div>
 <div class="paragraph">
-<p>All the validators used within this Supermodel are implemented in <a href="#SHACL">SHACL</a>, an <a href="#RDF">RDF</a> data validation language.</p>
+<p>The <a href="#_validators">Validators</a> section below lists all the validators relevant to this Supermodel and indicates their dependencies. It also includes a union validator that combines all the others and can be used to validate any data wishing to conform to this Supermodel.</p>
 </div>
 </div>
 <div class="sect2">
@@ -710,80 +702,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dl>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_models"><a class="anchor" href="#_models"></a>3. Models</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_supermodel"><a class="anchor" href="#_supermodel"></a>3.1. Supermodel</h3>
+<h3 id="_machine_readable_form"><a class="anchor" href="#_machine_readable_form"></a>2.8. Machine-readable form</h3>
 <div class="paragraph">
-<p>This Supermodel is the total set models listed here.</p>
-</div>
-<div class="sect3">
-<h4 id="_human_readable_form"><a class="anchor" href="#_human_readable_form"></a>3.1.1. Human-readable Form</h4>
-<div class="paragraph">
-<p>This document contains the normative, human-readable description of the Supermodel.</p>
-</div>
-<div class="paragraph">
-<p>The Supermodel is the total set of models listed below and is also conceived of as a <a href="#profile">profile</a> of the total set.</p>
-</div>
-<div class="paragraph">
-<p>The models within this Supermodel and the roles they play are listed in the table below.</p>
-</div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 12.5%;">
-<col style="width: 37.5%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Role</th>
-<th class="tableblock halign-left valign-top">PID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Address Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/addr" class="bare">https://linked.data.gov.au/def/addr</a></code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Geographical Names Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/gn" class="bare">https://linked.data.gov.au/def/gn</a></code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Road Names Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/roads" class="bare">https://linked.data.gov.au/def/roads</a></code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cadastral Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cadastral Survey Data Model</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#CM">Component Model</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://linked.data.gov.au/def/csdm" class="bare">https://linked.data.gov.au/def/csdm</a></code></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_machine_readable_form"><a class="anchor" href="#_machine_readable_form"></a>3.1.2. Machine-readable Form</h4>
-<div class="paragraph">
-<p>The machine-readable form of this Supermodel is an <a href="#OWL">OWL</a> model, formulated according to the <a href="#PROF">Profiles Vocabulary</a> and is online at:</p>
+<p>Like all the models within this Supermodel, the Supermodel itself has a machine-readable form that lists and relates all its elements:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -792,253 +714,211 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div id="fig-models" class="imageblock">
-<div class="content">
-<img src="images/models.png" alt="models">
-</div>
-<div class="title">Figure 1. An informal diagram the part Models of this Supermodel. The Administrative Areas model is not yet defined.</div>
-</div>
-<div class="paragraph">
-<p>For technical use, the machine-readable versions of the Backbone Model and the Component Models can be combined and used as the total Supermodel.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_backbone_model"><a class="anchor" href="#_backbone_model"></a>3.2. Backbone Model</h3>
-<div class="paragraph">
-<p>The Backbone Model for this Queensland Spatial Information scenario overviewed in <a href="#fig-backbone">Figure 3</a>. The elements of the Backbone Model are described next and the formal characterisation of the model in OWL is given in the machein-readable file <a href="https://spatial-information-qld.github.io/supermodel/backbone/model.ttl">backbone.ttl</a>.</p>
-</div>
-<div id="fig-backbone" class="imageblock">
-<div class="content">
-<img src="images/backbone.png" alt="backbone">
-</div>
-<div class="title">Figure 2. An OWL diagram of the Backbone Model overview. Uncertain objects are shown in light red.</div>
-</div>
-<div class="paragraph">
-<p>Figure 2 indicates two main conceptual domains (the yellow and blue) centered on <code>Feature Labels</code> (defined here) and <code>geo:Feature</code> s which are "Anything spatial (being or having a shape, position or an extent)" <a href="#GEO">GeoSPARQL</a>. Feature Labels are any form of identifying information assigned to a Feature <a href="#xxx">[xxx]</a>.</p>
-</div>
-<div class="paragraph">
-<p>The class hierharchy expressed in this Backbone Model (with sub class of arrows) indicates that:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>Address</code>, <code>AdministrativeArea</code> and perhaps <code>Title`</code> are all specialised forms of <code>FeatureLabel</code></p>
-</li>
-<li>
-<p><code>GeographicalName</code> is a form of <code>Address</code> (a very simple one!)</p>
-</li>
-<li>
-<p><code>Geographical Objects</code> are a specialised form of <code>AddressableObject</code> and <code>AddressableObject</code> and <code>Parcel</code>, and others, are speciali types of <code>geo:Feature</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The various Component Models (next) use these classes of object and imlplement many more specilised forms of them.</p>
-</div>
-<div class="sect3">
-<h4 id="_classes"><a class="anchor" href="#_classes"></a>3.2.1. Classes</h4>
-<div class="paragraph">
-<p>This Backbone Model only defines one class of object not already defined in the various Component models: <code>FeatureLabel</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="FeatureLabel"><a class="anchor" href="#FeatureLabel"></a>Feature Label</h5>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bb:FeatureLabel</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Label</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An annotation applied to a <code>Feature</code>. Specialised kinds of FeatureLabel are expected to be used, such as <code>Address</code> or <code>GeographicalName</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/eia-supermodel/backbone">SQI Supermodel Backbone Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provenance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Derived from <a href="#ISO19160-1">[ISO19160-1]</a>'s <code>AddressLifecycle</code> class</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Expected Properties</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#isLabelFor">is label for</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-turtle" data-lang="turtle"># The Label "Mount Doom" is applied to Feature X
-ex:fl-01
-    a bb:FeatureLabel ;
-    rdfs:label "Mount Doom" ;
-    bb:isLabelFor ex:feature-x ;
-.
-
-ex:feature-x
-    a geo:Feature ;
-    ex:category ex:mountain ;
-.</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_properties"><a class="anchor" href="#_properties"></a>3.2.2. Properties</h4>
-<div class="paragraph">
-<p>This Backbone Model only defines one property not already defined in the various Component models: <code>isLabelFor</code>.</p>
-</div>
-<div class="sect4">
-<h5 id="_is_label_for"><a class="anchor" href="#_is_label_for"></a>is label for</h5>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IRI</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bb:isLabelFor</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred Label</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">is label for</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Definition</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates an an object that a <a href="#FeatureLabel"><code>FeatureLabel</code></a> is an annotation for</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Is Defined By</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/eia-supermodel/backbone">SQI Supermodel Backbone Model</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub property of</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rdfs:label</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#FeatureLabel"><code>FeatureLabel</code></a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Range</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>geo:Feature</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Example</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>see the example for <a href="#FeatureLabel">Feature Label</a></em></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>3.3. Component Models</h3>
-<div class="sect3">
-<h4 id="_anz_national_address_model"><a class="anchor" href="#_anz_national_address_model"></a>3.3.1. ANZ National Address Model</h4>
-<div class="paragraph">
-<p>The Address Model is a model that has been defined externally to this Supermodel.</p>
-</div>
-<div class="paragraph">
-<p>It is available online at:</p>
-</div>
-<div class="paragraph">
-<p><strong><a href="https://linked.data.gov.au/def/addr" class="bare">https://linked.data.gov.au/def/addr</a></strong></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_geographical_names_model"><a class="anchor" href="#_geographical_names_model"></a>3.3.2. Geographical Names Model</h4>
-<div class="paragraph">
-<p>The Geographical Names Model is a model that has been defined externally to this Supermodel.</p>
-</div>
-<div class="paragraph">
-<p>It is available online at:</p>
-</div>
-<div class="paragraph">
-<p><strong><a href="https://linked.data.gov.au/def/placenames" class="bare">https://linked.data.gov.au/def/placenames</a></strong></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_roads_model"><a class="anchor" href="#_roads_model"></a>3.3.3. Roads Model</h4>
-<div class="paragraph">
-<p>The Roads Model is a model that has been defined externally to this Supermodel.</p>
-</div>
-<div class="paragraph">
-<p>It is available online at:</p>
-</div>
-<div class="paragraph">
-<p><strong><a href="https://linked.data.gov.au/def/roads" class="bare">https://linked.data.gov.au/def/roads</a></strong></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_cadastre_model"><a class="anchor" href="#_cadastre_model"></a>3.3.4. Cadastre Model</h4>
-<div class="paragraph">
-<p>The Cadastre Model is a model that has been defined externally to this Supermodel.</p>
-</div>
-<div class="paragraph">
-<p>It is available online at:</p>
-</div>
-<div class="paragraph">
-<p><strong><a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></strong></p>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<h2 id="_patterns"><a class="anchor" href="#_patterns"></a>3. Patterns</h2>
 <div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_models"><a class="anchor" href="#_models"></a>4. Models</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>4.1. Component Models</h3>
+<div class="paragraph">
+<p>Of the 7 Datasets in this Supermodel&#8217;s <a href="#_dataset_scope">scope</a>:</p>
+</div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><a id="ADDR"></a> Address Model</dt>
+<dt class="hdlist1">AusTraits</dt>
 <dd>
-<p>Intergovernmental Committee on Surveying &amp; Mapping. <em>Address Model</em>, 2024. Semantic Web model. <a href="https://linked.data.gov.au/def/addr" class="bare">https://linked.data.gov.au/def/addr</a></p>
+<p>follows an international domain ontology, <a href="#ETS">Ecological Trait-data Standard</a> compatible with this Supermodel</p>
 </dd>
-<dt class="hdlist1"><a id="CAD"></a> Cadastre Model</dt>
+<dt class="hdlist1">BDR</dt>
 <dd>
-<p>Intergovernmental Committee on Surveying &amp; Mapping. <em>Cadastre Model</em>, 2024. Proposed Semantic Web model. <a href="https://linked.data.gov.au/def/cad" class="bare">https://linked.data.gov.au/def/cad</a></p>
+<p>implements an Australian Semantic Web data exchange standard, <a href="#ABIS">ABIS</a> which this Supermodel incorporates</p>
 </dd>
-<dt class="hdlist1"><a id="CN"></a> Compound Naming Model</dt>
+<dt class="hdlist1">ANSIS &amp; NSL</dt>
 <dd>
-<p>Australian Government Linked Data Working Group, <em>Compound Naming Model</em> 2023. Semantic Web model. <a href="https://linked.data.gov.au/def/cn" class="bare">https://linked.data.gov.au/def/cn</a></p>
+<p>have purpose-built ontologies, <a href="#ANSISO">ANSIS Ontology</a> &amp; <a href="#NSLMODEL">NSL Model</a> compatible with ABIS and this Supermodel</p>
+</dd>
+<dt class="hdlist1">NVIS &amp; HCAS</dt>
+<dd>
+<p>don&#8217;t need Component Models as their concerns can be represented using this Supermodel&#8217;s Background Models</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Only one dataset, SPRAT, is not yet bound in to the Supermodel by one of the methods applied to the other 6. This is planned to happen soon.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_background_models"><a class="anchor" href="#_background_models"></a>4.2. Background Models</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>5. Vocabularies</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some of the vocabularies within this Supermodel are relevant to all datasets within this Supermodel&#8217;s data <a href="#_dataset_scope">scope</a>, others just to particular Component Models.</p>
+</div>
+<div class="paragraph">
+<p>Those relevant to all datasets are required for use by the <a href="#EIADP">EIA Data Profile</a> and are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://vocabs.lter-europe.net/EnvThes">EnvThes</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>"a set of terms in order to describe in a harmonised way data resulting from observations and measurements of ecosystem processes across different domain specific sciences"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://linked.data.gov.au/eia-dk">EIA Data Kinds Vocabulary</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each dataset claiming conformance to this Supermodel must be classified according to at least one EnvThes term</p>
+</div>
+<div class="paragraph">
+<p>The vocabularies relevant to individual Component Models and Background Models are defined by those models, however, here is a table of many of them and the models to which they are relevant:</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Model / Dataset</th>
+<th class="tableblock halign-left valign-top">Vocabulary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ANSIS  / &lt;&lt;ANSISO, ANSIS Ontology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Land Surface classifiers
+Soil Profile classifiers
+Substrate classifiers
+Australian Land Use and Management Classification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- / NVIS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NVIS Major Vegetation Groups and Major Vegetation Subgroups</p>
+<p class="tableblock">AusTraits Plant Dictionary glossary</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_validators"><a class="anchor" href="#_validators"></a>6. Validators</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The validators relevant to this Supermodel come from a range of sources and some derive from and extend on others. The following table lists all of them with derivation notes.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Validator</th>
+<th class="tableblock halign-left valign-top">Derived From</th>
+<th class="tableblock halign-left valign-top">Relevant Models</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ABIS">ABIS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validates all aspects of ABIS data from</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LOCIDP">Loc-I Data Profile</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DCAT">DCAT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, <a href="#SDO">schema.org</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires minimum metadata for catalogued datasets containing spatial data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#EIADP">EIA Data Profile</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Loc-I Data Profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, schema.org</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires minimum environmental domain dataset metadata</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GeoSPARQL 1.1 validator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">GeoSPARQL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GeoSPARQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic GeosPARQL validation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#VOCPUB">VocPub</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, <a href="#SKOS">SKOS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, SKOS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires minimum cataloguing metadata and structural composition for SKOS vocabularies</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>All the validators used within this Supermodel are implemented in <a href="#SHACL">SHACL</a>, an <a href="#RDF">RDF</a> data validation language and validation of data may be carried out as per the <a href="https://linked.data.gov.au/def/abis#<em>performing_validation">ABIS' _Performing Validation</em></a> section.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>7. References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a id="ABIS"></a> ABIS: Australian Biodiversity Information Governance Group, <em>Australian Biodiversity Information Standard</em>. Australian government data standard (4 December 2023). <a href="https://linked.data.gov.au/def/abis" class="bare">https://linked.data.gov.au/def/abis</a></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="ANSISO"></a> ANSISO</dt>
+<dd>
+<p>Megan Wong &amp; Simon JD Cox, <em>ANSIS Ontology</em>. Community proposed data standard (21 July 2022). <a href="https://raw.githack.com/ANZSoilData/def-au-domain/main/doc/domain.html">https://anzsoil.org/def/au/domain</a></p>
+</dd>
+<dt class="hdlist1"><a id="DCAT"></a> DCAT</dt>
+<dd>
+<p>World Wide Web Consortium, <em>Data Catalog Vocabulary (DCAT) - Version 3</em>, W3C Recommendation (22 August 2024). <a href="https://www.w3.org/TR/vocab-dcat-3/" class="bare">https://www.w3.org/TR/vocab-dcat-3/</a></p>
+</dd>
+<dt class="hdlist1"><a id="EIADP"></a> EIADP</dt>
+<dd>
+<p>Department of Climate Change, Energy and the Environment, <em>EIA Data Profile</em>, Community proposed data standard (15 May 2025), <a href="https://linked.data.gov.au/def/eia-dp" class="bare">https://linked.data.gov.au/def/eia-dp</a></p>
+</dd>
+<dt class="hdlist1"><a id="ETS"></a> ETS</dt>
+<dd>
+<p>Schneider, F.D., Jochum, M., Le Provost, G., Ostrowski, A., Penone, C. and Simons, N.K., <em>Ecological Trait-data Standard</em> v0.10, Community data standard (28 March 2019) <a href="https://doi.org/10.5281/zenodo.2605377" class="bare">https://doi.org/10.5281/zenodo.2605377</a></p>
 </dd>
 <dt class="hdlist1"><a id="GEO"></a> GeoSPARQL</dt>
 <dd>
 <p>Open Geospatial Consortium, <em>OGC GeoSPARQL - A Geographic Query Language for RDF Data, Version 1.1</em>, OGC® Implementation Specification (2024). <a href="http://www.opengis.net/doc/IS/geosparql/1.1" class="bare">http://www.opengis.net/doc/IS/geosparql/1.1</a></p>
 </dd>
-<dt class="hdlist1"><a id="GN"></a> Cadastre Model</dt>
+<dt class="hdlist1"><a id="LOCIDP"></a> LOCIDP</dt>
 <dd>
-<p>Intergovernmental Committee on Surveying &amp; Mapping. <em>Geographical Names Model</em>, 2024. Proposed Semantic Web model. <a href="https://linked.data.gov.au/def/gn" class="bare">https://linked.data.gov.au/def/gn</a></p>
+<p>Geoscience Australia, <em>Loc-I Data Profile</em>, Semantic Web profile (3 April 2021). <a href="https://linked.data.gov.au/def/loci-dp" class="bare">https://linked.data.gov.au/def/loci-dp</a></p>
 </dd>
-<dt class="hdlist1"><a id="ISO19125-1"></a> ISO19125-1</dt>
-<dd>
-<p>International Organization for Standardization, <em>ISO 19125-1: Geographic information — Simple Feature Access - Part 1: Common Architecture</em>, 2004. <a href="https://www.iso.org/standard/40114.html" class="bare">https://www.iso.org/standard/40114.html</a></p>
-</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><a id="NSLMODEL"></a> NSLMODEL: Centre for Australian National Biodiversity Research, <em>National Species List - Semantic Web Model</em> (15 October 2023). <a href="https://linked.data.gov.au/def/nsl" class="bare">https://linked.data.gov.au/def/nsl</a></p>
+</div>
+<div class="dlist">
+<dl>
 <dt class="hdlist1"><a id="OWL"></a> OWL</dt>
 <dd>
 <p>World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
@@ -1051,13 +931,9 @@ ex:feature-x
 <dd>
 <p>World Wide Web Consortium, <em>RDF 1.1 Concepts and Abstract Syntax</em>, W3C Recommendation (25 February 2014). <a href="https://www.w3.org/TR/rdf11-concepts/" class="bare">https://www.w3.org/TR/rdf11-concepts/</a></p>
 </dd>
-<dt class="hdlist1"><a id="ROAD"></a> Road Names Model</dt>
-<dd>
-<p>Intergovernmental Committee on Surveying &amp; Mapping. <em>Road Names Model</em>, 2024. Proposed Semantic Web data model. <a href="https://linked.data.gov.au/def/roads" class="bare">https://linked.data.gov.au/def/roads</a></p>
-</dd>
 <dt class="hdlist1"><a id="SDO"></a> schema.org</dt>
 <dd>
-<p>W3C Schema.org Community Group, <em>schema.org</em> 2015. Semantic Web model. <a href="https://schema.org" class="bare">https://schema.org</a></p>
+<p>W3C Schema.org Community Group, <em>schema.org</em>, Semantic Web model (2015). <a href="https://schema.org" class="bare">https://schema.org</a></p>
 </dd>
 <dt class="hdlist1"><a id="SHACL"></a> SHACL</dt>
 <dd>
@@ -1065,7 +941,11 @@ ex:feature-x
 </dd>
 <dt class="hdlist1"><a id="SKOS"></a> SKOS</dt>
 <dd>
-<p>World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System</em> 18 August 2009. Semantic Web model. <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
+<p>World Wide Web Consortium, <em>SKOS Simple Knowledge Organization System</em>, W3C Recommendation (18 August 2009). Semantic Web model. <a href="https://www.w3.org/TR/skos-reference/" class="bare">https://www.w3.org/TR/skos-reference/</a></p>
+</dd>
+<dt class="hdlist1"><a id="VOCPUB"></a> VOCPUB</dt>
+<dd>
+<p>Australian Government Linked Data Working Group, <em>VocPub Profile of SKOS</em>, Australian community standard (2020). <a href="https://linked.data.gov.au/def/vocpub" class="bare">https://linked.data.gov.au/def/vocpub</a></p>
 </dd>
 </dl>
 </div>
@@ -1074,7 +954,7 @@ ex:feature-x
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-07-30 06:20:46 UTC
+Last updated 2025-08-04 12:01:26 UTC
 </div>
 </div>
 </body>
