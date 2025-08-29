@@ -132,13 +132,17 @@ Like all the models within this Supermodel, the Supermodel itself has a machine-
 Of the 7 Datasets in this Supermodel's <<Dataset Scope, scope>>:
 
 AusTraits:: follows an international domain ontology, <<ETS, Ecological Trait-data Standard>> compatible with this Supermodel
-BDR:: implements an Australian Semantic Web data exchange standard, <<ABIS, ABIS>> which this Supermodel incorporates
+BDR:: implements an profile of the Australian Semantic Web data exchange standard, <<ABIS, ABIS>> which this Supermodel incorporates
 ANSIS & NSL:: have purpose-built ontologies, <<ANSISO, ANSIS Ontology>> & <<NSLMODEL, NSL Model>> compatible with ABIS and this Supermodel
 NVIS & HCAS:: don't need Component Models as their concerns can be represented using this Supermodel's Background Models
+Reference Areas:: conforms to <<GEO, GeoSPARQL>>, the background spatial model
 
 Only one dataset, SPRAT, is not yet bound in to the Supermodel by one of the methods applied to the other 6. This is planned to happen soon.
 
+The AusTraits to NSL Mapping Linkset doesn't need a Component Model either _IF_ a single predicate can be added to either AusTraits.
+
 === Background Models
+
 
 == Vocabularies
 
