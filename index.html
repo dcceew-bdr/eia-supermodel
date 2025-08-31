@@ -447,7 +447,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_this_supermodels_origins">2.2. This Supermodel&#8217;s Origins</a></li>
 <li><a href="#_dataset_scope">2.3. Dataset Scope</a></li>
 <li><a href="#_modelling_system">2.4. Modelling System</a></li>
-<li><a href="#_use_of_patterns">2.5. Use of Patterns</a></li>
+<li><a href="#_patterning">2.5. Patterning</a></li>
 <li><a href="#_validation">2.6. Validation</a></li>
 <li><a href="#_definitions">2.7. Definitions</a></li>
 <li><a href="#_machine_readable_form">2.8. Machine-readable form</a></li>
@@ -456,8 +456,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_patterns">3. Patterns</a></li>
 <li><a href="#_models">4. Models</a>
 <ul class="sectlevel2">
-<li><a href="#_component_models">4.1. Component Models</a></li>
-<li><a href="#_background_models">4.2. Background Models</a></li>
+<li><a href="#_component_models">4.1. Component Models</a>
+<ul class="sectlevel3">
+<li><a href="#_ecological_trait_data_standard">4.1.1. Ecological Trait-data Standard</a></li>
+<li><a href="#_australian_biodiversity_information_standard">4.1.2. Australian Biodiversity Information Standard</a></li>
+<li><a href="#_ansis_ontology">4.1.3. ANSIS Ontology</a></li>
+<li><a href="#_nsl_model">4.1.4. NSL Model</a></li>
+</ul>
+</li>
+<li><a href="#_background_models">4.2. Background Models</a>
+<ul class="sectlevel3">
+<li><a href="#_geosparql">4.2.1. GeoSPARQL</a></li>
+<li><a href="#_sosa">4.2.2. SOSA</a></li>
+<li><a href="#_skos">4.2.3. SKOS</a></li>
+<li><a href="#_prov">4.2.4. PROV</a></li>
+<li><a href="#_schema_org">4.2.5. schema.org</a></li>
+<li><a href="#_owl_time">4.2.6. OWL TIME</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_vocabularies">5. Vocabularies</a></li>
@@ -480,10 +496,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>This 'Supermodel' is a set of data models used by DCCEEW to integrate data from formerly separate systems into an interoperable whole.</p>
-</div>
-<div class="paragraph">
-<p>As of July 2025, this Supermodel is used for data integrations only.</p>
+<p>A 'Supermodel' is set of data models used by to integrate data. This Supermodel is designed to allow DCCEEW to integrate Environmental Information Australia datasets.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -493,7 +506,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This Supermodel is demonstrated through the <a href="https://eia.testing.bdr.gov.au">EIA Test Catalogue</a>, online via the Biodiversity Data Repository&#8217;s infrastructure.</p>
+<p>This Supermodel is demonstrated through the <a href="https://eia.testing.bdr.gov.au">EIA Test Catalogue</a> which delivers all parts of this Supermodel and demonstration data created to show integration. A <a href="https://eia.testing.bdr.gov.au/eia-demo">Scenario Demonstration</a> is also provided to test querying the data.</p>
 </div>
 </td>
 </tr>
@@ -528,11 +541,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Modified</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2025-08-04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-08-30</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Issued</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0000-00-00 - not in production use yet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2025-08-30</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Version</strong></p></td>
@@ -579,13 +592,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>In early 2025, DCCEEW conducted a demonstration project called the <em>EIA Supermodel Demonstrator</em> that aimed at showing how integration-ready data might appear and be used.</p>
 </div>
 <div class="paragraph">
-<p>The target datasets for this work were several within DCCEEW&#8217;s <em>Environmental Information Australia</em> initiative and DCCEEW&#8217;s then new <a href="https://bdr.gov.au">Biodiversity Data Repository</a> was used as the reference dataset: the one who&#8217;s form subsets of other datasets would emulate. This was due to the BDR having been designed specifically for integration.</p>
+<p>The target datasets for this work were within DCCEEW&#8217;s <em>Environmental Information Australia</em> initiative and DCCEEW&#8217;s then new <a href="https://bdr.gov.au">Biodiversity Data Repository</a> was used as the reference dataset: the one whose form other datasets would emulate. This was due to the BDR having been designed specifically for cross-dataset integration.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_dataset_scope"><a class="anchor" href="#_dataset_scope"></a>2.3. Dataset Scope</h3>
 <div class="paragraph">
-<p>The scope of this Supermodel was set within its establishment project to initially cover data from 7 DCCEEW datasets:</p>
+<p>The scope of this Supermodel was set within its establishment project to initially cover data from 6 DCCEEW datasets:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -607,16 +620,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p><a href="https://bdr.gov.au">Biodiversity Data Repository (BDR)</a></p>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Additionally, the National Species List was included as a seventh dataset as it is already referenced by the BDR and species information is obviously used in much DCCEEW data:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
 <li>
 <p><a href="https://biodiversity.org.au">National Species List (NSL)</a></p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>This Supermodel contains <em>Component Models</em> and partial, demonstration, datasets for each of these datasets, as well as 20+ supporting assets - background datasets, vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.</p>
+<p>An eighth dataset, <em>Reference Areas</em> was established too. This is a general-purpose, background dataset of reference spatial areas, such as RAMSAR wetlands and other named areas of ecological significance that are often used by DCCEEW for reporting:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="8">
+<li>
+<p>Reference Areas</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Together, the <em>Component Models</em>, <em>Background Models</em> and other Supermodel elements allow all the parts of the DCCEEW datasets to be integrated with all other parts, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together with common data structure and reference values.</p>
+<p>This Supermodel contains <em>Component Models</em> for each of these datasets, as well as 20+ supporting assets - vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.</p>
+</div>
+<div class="paragraph">
+<p>Together, the <em>Component Models</em>, <em>Background Models</em> and other Supermodel elements allow all parts of these DCCEEW datasets to be integrated, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together and reference values for common attributes are aligned.</p>
 </div>
 </div>
 <div class="sect2">
@@ -635,9 +665,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_use_of_patterns"><a class="anchor" href="#_use_of_patterns"></a>2.5. Use of Patterns</h3>
+<h3 id="_patterning"><a class="anchor" href="#_patterning"></a>2.5. Patterning</h3>
 <div class="paragraph">
-<p>Integrated use of multiple Component Models depends on each of them implementing, or mapping to, model elements in the Background Models referred to as <a href="#pattern">patterns</a>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <a href="#_patterns">Patterns</a> section lists a set of patterns that covers the scoped datasets' implementation at least once over completely.</p>
+<p>Integrated use of multiple Component Models depends on each of them implementing, or mapping to, parts of the Background Models referred to as <a href="#pattern">patterns</a>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <a href="#_patterns">Patterns</a> section lists a set that covers the scoped datasets' implementation at least once over.</p>
 </div>
 </div>
 <div class="sect2">
@@ -646,10 +676,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>For demonstrable interoperability, this Supermodel contains data validators for some of its Background and Component Models that test data claiming conformance to it against identified patterns. These validators are executable model specifications.</p>
 </div>
 <div class="paragraph">
-<p>Some of the validators for the models within this Supermodel were created by the original model implementors, e.g. ABIS, but others have had validators created for this through the EIA Demonstrator project.</p>
+<p>Most of the validators for the models within this Supermodel were created by the original model implementors, e.g. GeoSPARQL &amp; ABIS, but one validator in particular was created for the  EIA Demonstrator project: the <a href="https://linked.data.gov.au/def/eia-dp">EIA Data Profile</a>. This validator is used to ensure datasets have basic metadata required to implement patterns listed in the <a href="#_patterns">Patterns</a> section.</p>
 </div>
 <div class="paragraph">
-<p>The <a href="#_validators">Validators</a> section below lists all the validators relevant to this Supermodel and indicates their dependencies. It also includes a union validator that combines all the others and can be used to validate any data wishing to conform to this Supermodel.</p>
+<p>The <a href="#_validators">Validators</a> section below lists all the validators relevant to this Supermodel and indicates their dependencies. It also describes how to validate data.</p>
 </div>
 </div>
 <div class="sect2">
@@ -720,7 +750,90 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_patterns"><a class="anchor" href="#_patterns"></a>3. Patterns</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Modelling patterns are conventional, or even standardised, ways of modelling particular data scenarios. For example, within the <a href="#OWL">OWL</a> modelling world - see <a href="#_modelling_system">Modelling System</a> above for context - if you want to associate something with something else, but you want to also include additional information in that association, such as a giving a time duration for when a relationship between two people occurred, you can use the <a href="https://patterns.dataincubator.org/book/ordering-relation.html"><em>Qualified Relations</em></a> pattern which looks like this:</p>
+</div>
+<div class="imageblock center text-center">
+<div class="content">
+<img src="images/qual-rel.svg" alt="qual rel" width="500">
+</div>
+<div class="title">Figure 1. Top: A un-qualified relationship - <code>marriedTo</code> - between two people. Bottom: a qualified relationship between people where the start and end date is indicated.</div>
+</div>
+<div class="paragraph">
+<p>The <em>Qualified Relations</em> pattern show above is not defined by any particular model within this Supermodel but is implemented by many of them. It is a fundamental graph modelling pattern used by modelling systems such as OWL.</p>
+</div>
+<div class="paragraph">
+<p>There is no one definitive set of patterns that can be extracted from this Supermodel&#8217;s models as patterns overlaps both across and sometimes within models, however patterns that are deemed important are often formalise with validation rules that look for them in data, see the <a href="#_validators">Validators</a> section.</p>
+</div>
+<div class="paragraph">
+<p>The following list of patterns are taken from this Supermodel&#8217;s models and validators that cover major aspects of data needed to be modelled in particular ways to achieve certain interoperability outcomes.</p>
+</div>
+<table class="tableblock frame-all grid-all stripes-even stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Pattern</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic Dataset Metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To allow simple listing and filtering of datasets in catalogues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://linked.data.gov.au/def/bcp/validator">Basic Catalogue Profile validator</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spatial Dataset Structure</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AusTraits">[AusTraits]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environmental Dataset Domain Categorisation</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Object Spatiality</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification Term Definition</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification Vocabulary Structure</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model Classes</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Model Relationships</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Observations</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Domain-wide Observable Properties</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -739,7 +852,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">BDR</dt>
 <dd>
-<p>implements an profile of the Australian Semantic Web data exchange standard, <a href="#ABIS">ABIS</a> which this Supermodel incorporates</p>
+<p>implements a profile of the Australian Semantic Web data exchange standard, <a href="#ABIS">ABIS</a> which this Supermodel incorporates</p>
 </dd>
 <dt class="hdlist1">ANSIS &amp; NSL</dt>
 <dd>
@@ -761,10 +874,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>The AusTraits to NSL Mapping Linkset doesn&#8217;t need a Component Model either <em>IF</em> a single predicate can be added to either AusTraits.</p>
 </div>
+<div class="paragraph">
+<p>Here are details of each of the four Component Model:</p>
+</div>
+<div class="sect3">
+<h4 id="_ecological_trait_data_standard"><a class="anchor" href="#_ecological_trait_data_standard"></a>4.1.1. Ecological Trait-data Standard</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_australian_biodiversity_information_standard"><a class="anchor" href="#_australian_biodiversity_information_standard"></a>4.1.2. Australian Biodiversity Information Standard</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_ansis_ontology"><a class="anchor" href="#_ansis_ontology"></a>4.1.3. ANSIS Ontology</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_nsl_model"><a class="anchor" href="#_nsl_model"></a>4.1.4. NSL Model</h4>
+
+</div>
 </div>
 <div class="sect2">
 <h3 id="_background_models"><a class="anchor" href="#_background_models"></a>4.2. Background Models</h3>
+<div class="sect3">
+<h4 id="_geosparql"><a class="anchor" href="#_geosparql"></a>4.2.1. GeoSPARQL</h4>
 
+</div>
+<div class="sect3">
+<h4 id="_sosa"><a class="anchor" href="#_sosa"></a>4.2.2. SOSA</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_skos"><a class="anchor" href="#_skos"></a>4.2.3. SKOS</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_prov"><a class="anchor" href="#_prov"></a>4.2.4. PROV</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_schema_org"><a class="anchor" href="#_schema_org"></a>4.2.5. schema.org</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_owl_time"><a class="anchor" href="#_owl_time"></a>4.2.6. OWL TIME</h4>
+
+</div>
 </div>
 </div>
 </div>
@@ -851,14 +1006,14 @@ Australian Land Use and Management Classification</p></td>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS Validators</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ABIS">ABIS</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validates all aspects of ABIS data from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Basic Catalogue Profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DCAT">DCAT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validates Datsets' metadata contains basic annotations and relations to Agents</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#LOCIDP">Loc-I Data Profile</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#DCAT">DCAT</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, <a href="#GEO">GeoSPARQL</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, <a href="#SDO">schema.org</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Requires minimum metadata for catalogued datasets containing spatial data</p></td>
 </tr>
@@ -870,9 +1025,21 @@ Australian Land Use and Management Classification</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GeoSPARQL 1.1 validator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#GEO">GeoSPARQL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GeoSPARQL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GeoSPARQL</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Basic GeosPARQL validation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS &amp; BDR PR Validators</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ABIS">ABIS</a>, <a href="#BDRPR">BDR Profile of ABIS</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABIS &amp; BDR-PR</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validates all aspects of ABIS, and BDR Profile of ABIS, data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ONTPUB">OntPub</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, <a href="#OWL">OWL</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DCAT, OWL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Requires minimum cataloguing metadata, structural composition and element annotations for OWL Ontologies</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#VOCPUB">VocPub</a></p></td>
@@ -898,6 +1065,10 @@ Australian Land Use and Management Classification</p></td>
 <dt class="hdlist1"><a id="ANSISO"></a> ANSISO</dt>
 <dd>
 <p>Megan Wong &amp; Simon JD Cox, <em>ANSIS Ontology</em>. Community proposed data standard (21 July 2022). <a href="https://raw.githack.com/ANZSoilData/def-au-domain/main/doc/domain.html">https://anzsoil.org/def/au/domain</a></p>
+</dd>
+<dt class="hdlist1"><a id="BDRPR"></a> BDRPR</dt>
+<dd>
+<p>DCCEEW, <em>BDR Profile of ABIS</em>. System data model (2025). <a href="https://linked.data.gov.au/def/bdr-pr" class="bare">https://linked.data.gov.au/def/bdr-pr</a></p>
 </dd>
 <dt class="hdlist1"><a id="DCAT"></a> DCAT</dt>
 <dd>
@@ -926,6 +1097,10 @@ Australian Land Use and Management Classification</p></td>
 </div>
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><a id="ONTPUB"></a> ONTPUB</dt>
+<dd>
+<p>Australian Government Linked Data Working Group, <em>Ontology Publication Profile of OWL</em>, Australian community standard (2020). <a href="https://linked.data.gov.au/def/ontpub" class="bare">https://linked.data.gov.au/def/ontpub</a></p>
+</dd>
 <dt class="hdlist1"><a id="OWL"></a> OWL</dt>
 <dd>
 <p>World Wide Web Consortium, <em>OWL 2 Web Ontology Language Document Overview (Second Edition)</em>, W3C Recommendation (11 December 2012). <a href="https://www.w3.org/TR/owl2-overview/" class="bare">https://www.w3.org/TR/owl2-overview/</a></p>
@@ -961,7 +1136,7 @@ Australian Land Use and Management Classification</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-08-29 01:00:24 UTC
+Last updated 2025-08-31 08:26:06 UTC
 </div>
 </div>
 </body>
