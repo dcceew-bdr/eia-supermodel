@@ -11,13 +11,11 @@ image::images/dcceew-logo-blue.svg[width=500,float="center",align="center"]
 
 image::images/eia-supermodel-parts.svg[width=750,float="center",align="center"]
 
-This 'Supermodel' is a set of data models used by DCCEEW to integrate data from formerly separate systems into an interoperable whole.
-
-As of July 2025, this Supermodel is used for data integrations only.
+A 'Supermodel' is set of data models used by to integrate data. This Supermodel is designed to allow DCCEEW to integrate Environmental Information Australia datasets.
 
 [NOTE]
 ====
-This Supermodel is demonstrated through the https://eia.testing.bdr.gov.au[EIA Test Catalogue], online via the Biodiversity Data Repository's infrastructure.
+This Supermodel is demonstrated through the https://eia.testing.bdr.gov.au[EIA Test Catalogue] which delivers all parts of this Supermodel and demonstration data created to show integration. A https://eia.testing.bdr.gov.au/eia-demo[Scenario Demonstration] is also provided to test querying the data.
 ====
 
 == Metadata
@@ -28,8 +26,8 @@ This Supermodel is demonstrated through the https://eia.testing.bdr.gov.au[EIA T
 |**Title** | EIA Supermodel
 |**Description** | This is an overarching model - a Supermodel - used to integrate multiple, individual, models together for use within a particular scenario.
 |**Created** | 2025-02-15
-|**Modified** | 2025-08-04
-|**Issued** | 0000-00-00 - not in production use yet
+|**Modified** | 2025-08-30
+|**Issued** | 2025-08-30
 |**Version** | 1
 |**Creator** | https://kurrawong.ai[KurrawongAI], for DCCEEW
 |**Publisher** | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy, the Environment and Water (DCCEEW)]
@@ -51,11 +49,11 @@ Like all large and long-term data holders, the https://linked.data.gov.au/org/dc
 
 In early 2025, DCCEEW conducted a demonstration project called the _EIA Supermodel Demonstrator_ that aimed at showing how integration-ready data might appear and be used.
 
-The target datasets for this work were several within DCCEEW's _Environmental Information Australia_ initiative and DCCEEW's then new https://bdr.gov.au[Biodiversity Data Repository] was used as the reference dataset: the one who's form subsets of other datasets would emulate. This was due to the BDR having been designed specifically for integration.
+The target datasets for this work were within DCCEEW's _Environmental Information Australia_ initiative and DCCEEW's then new https://bdr.gov.au[Biodiversity Data Repository] was used as the reference dataset: the one whose form other datasets would emulate. This was due to the BDR having been designed specifically for cross-dataset integration.
 
 === Dataset Scope
 
-The scope of this Supermodel was set within its establishment project to initially cover data from 7 DCCEEW datasets:
+The scope of this Supermodel was set within its establishment project to initially cover data from 6 DCCEEW datasets:
 
 1. https://www.dcceew.gov.au/environment/environment-information-australia/national-vegetation-information-system[National Vegetation Information system (NVIS)]
 2. https://www.dcceew.gov.au/environment/biodiversity/threatened[Species Risks Assessment Tool (SPRAT)]
@@ -63,11 +61,20 @@ The scope of this Supermodel was set within its establishment project to initial
 4. https://doi.org/10.1038/s41597-021-01006-6[Australian National Flora Traits (AusTraits)]
 5. https://ansis.net[Australian National Soil Information System (ANSIS)]
 6. https://bdr.gov.au[Biodiversity Data Repository (BDR)]
-7. https://biodiversity.org.au[National Species List (NSL)]
 
-This Supermodel contains _Component Models_ and partial, demonstration, datasets for each of these datasets, as well as 20+ supporting assets - background datasets, vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.
+Additionally, the National Species List was included as a seventh dataset as it is already referenced by the BDR and species information is obviously used in much DCCEEW data:
 
-Together, the _Component Models_, _Background Models_ and other Supermodel elements allow all the parts of the DCCEEW datasets to be integrated with all other parts, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together with common data structure and reference values.
+[start=7]
+. https://biodiversity.org.au[National Species List (NSL)]
+
+An eighth dataset, _Reference Areas_ was established too. This is a general-purpose, background dataset of reference spatial areas, such as RAMSAR wetlands and other named areas of ecological significance that are often used by DCCEEW for reporting:
+
+[start=8]
+. Reference Areas
+
+This Supermodel contains _Component Models_ for each of these datasets, as well as 20+ supporting assets - vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.
+
+Together, the _Component Models_, _Background Models_ and other Supermodel elements allow all parts of these DCCEEW datasets to be integrated, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together and reference values for common attributes are aligned.
 
 === Modelling System
 
@@ -79,17 +86,17 @@ The Supermodel's constituent models are related to one another using <<PROF, _Th
 
 The technical presentation of data modelled in OWL is in <<RDF>> which is a graph ('node-edge-node') data structure. RDF allows models and data according to the models to be stored in files or databases of the same sort. RDF is also infinitely extensible, allowing for not just model change and growth but for easy schema change and growth too.
 
-=== Use of Patterns
+=== Patterning
 
-Integrated use of multiple Component Models depends on each of them implementing, or mapping to, model elements in the Background Models referred to as <<pattern, patterns>>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <<Patterns, Patterns>> section lists a set of patterns that covers the scoped datasets' implementation at least once over completely.
+Integrated use of multiple Component Models depends on each of them implementing, or mapping to, parts of the Background Models referred to as <<pattern, patterns>>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <<Patterns, Patterns>> section lists a set that covers the scoped datasets' implementation at least once over.
 
 === Validation
 
 For demonstrable interoperability, this Supermodel contains data validators for some of its Background and Component Models that test data claiming conformance to it against identified patterns. These validators are executable model specifications.
 
-Some of the validators for the models within this Supermodel were created by the original model implementors, e.g. ABIS, but others have had validators created for this through the EIA Demonstrator project.
+Most of the validators for the models within this Supermodel were created by the original model implementors, e.g. GeoSPARQL & ABIS, but one validator in particular was created for the  EIA Demonstrator project: the https://linked.data.gov.au/def/eia-dp[EIA Data Profile]. This validator is used to ensure datasets have basic metadata required to implement patterns listed in the <<Patterns, Patterns>> section.
 
-The <<Validators, Validators>> section below lists all the validators relevant to this Supermodel and indicates their dependencies. It also includes a union validator that combines all the others and can be used to validate any data wishing to conform to this Supermodel.
+The <<Validators, Validators>> section below lists all the validators relevant to this Supermodel and indicates their dependencies. It also describes how to validate data.
 
 === Definitions
 
@@ -123,6 +130,32 @@ Like all the models within this Supermodel, the Supermodel itself has a machine-
 
 == Patterns
 
+Modelling patterns are conventional, or even standardised, ways of modelling particular data scenarios. For example, within the <<OWL, OWL>> modelling world - see <<Modelling System>> above for context - if you want to associate something with something else, but you want to also include additional information in that association, such as a giving a time duration for when a relationship between two people occurred, you can use the https://patterns.dataincubator.org/book/ordering-relation.html[_Qualified Relations_] pattern which looks like this:
+
+.Top: A un-qualified relationship - `marriedTo` - between two people. Bottom: a qualified relationship between people where the start and end date is indicated.
+image::images/qual-rel.svg[width=500,float="center",align="center"]
+
+The _Qualified Relations_ pattern show above is not defined by any particular model within this Supermodel but is implemented by many of them. It is a fundamental graph modelling pattern used by modelling systems such as OWL.
+
+There is no one definitive set of patterns that can be extracted from this Supermodel's models as patterns overlaps both across and sometimes within models, however patterns that are deemed important are often formalise with validation rules that look for them in data, see the <<Validators>> section.
+
+The following list of patterns are taken from this Supermodel's models and validators that cover major aspects of data needed to be modelled in particular ways to achieve certain interoperability outcomes.
+
+|===
+| Pattern | Purpose | Implementation
+
+| Basic Dataset Metadata | To allow simple listing and filtering of datasets in catalogues | https://linked.data.gov.au/def/bcp/validator[Basic Catalogue Profile validator]
+| Spatial Dataset Structure |  | <<AusTraits>>
+| Environmental Dataset Domain Categorisation |  |
+| Object Spatiality |  |
+| Classification Term Definition |  |
+| Classification Vocabulary Structure |  |
+| Model Classes |  |
+| Model Relationships |  |
+| Observations | |
+| Domain-wide Observable Properties | |
+|===
+
 
 
 == Models
@@ -132,7 +165,7 @@ Like all the models within this Supermodel, the Supermodel itself has a machine-
 Of the 7 Datasets in this Supermodel's <<Dataset Scope, scope>>:
 
 AusTraits:: follows an international domain ontology, <<ETS, Ecological Trait-data Standard>> compatible with this Supermodel
-BDR:: implements an profile of the Australian Semantic Web data exchange standard, <<ABIS, ABIS>> which this Supermodel incorporates
+BDR:: implements a profile of the Australian Semantic Web data exchange standard, <<ABIS, ABIS>> which this Supermodel incorporates
 ANSIS & NSL:: have purpose-built ontologies, <<ANSISO, ANSIS Ontology>> & <<NSLMODEL, NSL Model>> compatible with ABIS and this Supermodel
 NVIS & HCAS:: don't need Component Models as their concerns can be represented using this Supermodel's Background Models
 Reference Areas:: conforms to <<GEO, GeoSPARQL>>, the background spatial model
@@ -141,8 +174,29 @@ Only one dataset, SPRAT, is not yet bound in to the Supermodel by one of the met
 
 The AusTraits to NSL Mapping Linkset doesn't need a Component Model either _IF_ a single predicate can be added to either AusTraits.
 
+Here are details of each of the four Component Model:
+
+==== Ecological Trait-data Standard
+
+==== Australian Biodiversity Information Standard
+
+==== ANSIS Ontology
+
+==== NSL Model
+
 === Background Models
 
+==== GeoSPARQL
+
+==== SOSA
+
+==== SKOS
+
+==== PROV
+
+==== schema.org
+
+==== OWL TIME
 
 == Vocabularies
 
@@ -174,8 +228,6 @@ AusTraits Plant Dictionary glossary
 
 |===
 
-
-
 == Validators
 
 The validators relevant to this Supermodel come from a range of sources and some derive from and extend on others. The following table lists all of them with derivation notes.
@@ -183,10 +235,12 @@ The validators relevant to this Supermodel come from a range of sources and some
 |===
 | Validator | Derived From | Relevant Models | Notes
 
-| ABIS Validators | <<ABIS, ABIS>> | ABIS | Validates all aspects of ABIS data from
-| <<LOCIDP, Loc-I Data Profile>> | <<DCAT, DCAT>> | DCAT, <<SDO, schema.org>> | Requires minimum metadata for catalogued datasets containing spatial data
+| Basic Catalogue Profile | <<DCAT, DCAT>> | DCAT | Validates Datsets' metadata contains basic annotations and relations to Agents
+| <<LOCIDP, Loc-I Data Profile>> | DCAT, <<GEO, GeoSPARQL>> | DCAT, <<SDO, schema.org>> | Requires minimum metadata for catalogued datasets containing spatial data
 | <<EIADP, EIA Data Profile>> | Loc-I Data Profile | DCAT, schema.org | Requires minimum environmental domain dataset metadata
-| GeoSPARQL 1.1 validator | <<GEO, GeoSPARQL>> | GeoSPARQL | Basic GeosPARQL validation
+| GeoSPARQL 1.1 validator | GeoSPARQL | GeoSPARQL | Basic GeosPARQL validation
+| ABIS & BDR PR Validators | <<ABIS, ABIS>>, <<BDRPR, BDR Profile of ABIS>> | ABIS & BDR-PR | Validates all aspects of ABIS, and BDR Profile of ABIS, data
+| <<ONTPUB, OntPub>> | DCAT, <<OWL, OWL>> | DCAT, OWL | Requires minimum cataloguing metadata, structural composition and element annotations for OWL Ontologies
 | <<VOCPUB, VocPub>> | DCAT, <<SKOS, SKOS>> | DCAT, SKOS | Requires minimum cataloguing metadata and structural composition for SKOS vocabularies
 |===
 
@@ -197,6 +251,8 @@ All the validators used within this Supermodel are implemented in <<SHACL, SHACL
 [[ABIS]] ABIS: Australian Biodiversity Information Governance Group, _Australian Biodiversity Information Standard_. Australian government data standard (4 December 2023). https://linked.data.gov.au/def/abis
 
 [[ANSISO]] ANSISO:: Megan Wong & Simon JD Cox, _ANSIS Ontology_. Community proposed data standard (21 July 2022). https://raw.githack.com/ANZSoilData/def-au-domain/main/doc/domain.html[https://anzsoil.org/def/au/domain]
+
+[[BDRPR]] BDRPR:: DCCEEW, _BDR Profile of ABIS_. System data model (2025). https://linked.data.gov.au/def/bdr-pr
 
 [[DCAT]] DCAT:: World Wide Web Consortium, _Data Catalog Vocabulary (DCAT) - Version 3_, W3C Recommendation (22 August 2024). https://www.w3.org/TR/vocab-dcat-3/
 
@@ -209,6 +265,8 @@ All the validators used within this Supermodel are implemented in <<SHACL, SHACL
 [[LOCIDP]] LOCIDP:: Geoscience Australia, _Loc-I Data Profile_, Semantic Web profile (3 April 2021). https://linked.data.gov.au/def/loci-dp
 
 [[NSLMODEL]] NSLMODEL: Centre for Australian National Biodiversity Research, _National Species List - Semantic Web Model_ (15 October 2023). https://linked.data.gov.au/def/nsl
+
+[[ONTPUB]] ONTPUB:: Australian Government Linked Data Working Group, _Ontology Publication Profile of OWL_, Australian community standard (2020). https://linked.data.gov.au/def/ontpub
 
 [[OWL]] OWL:: World Wide Web Consortium, _OWL 2 Web Ontology Language Document Overview (Second Edition)_, W3C Recommendation (11 December 2012). https://www.w3.org/TR/owl2-overview/
 
