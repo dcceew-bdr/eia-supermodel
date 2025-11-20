@@ -28,12 +28,18 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     schema:codeRepository "https://github.com/dcceew-bdr/eia-supermodel"^^xsd:anyURI ;
     dcat:hadRole role:supermodel-definition ;
     prof:isProfileOf
+        # Component Models
         <https://anzsoil.org/def/au/domain> ,
         <https://linked.data.gov.au/def/abis> ,
         <https://linked.data.gov.au/def/bdr-pr> ,
         <https://linked.data.gov.au/def/nsl> ,
         <http://terminologies.gfbio.org/terms/ETS/> ,
-        <http://www.opengis.net/ont/geosparql> ;
+        # Background Models
+        <http://www.opengis.net/ont/geosparql> ,
+        <http://www.w3.org/2002/07/owl> ,
+        <http://www.w3.org/ns/dx/prof> ,
+        <https://schema.org> ,
+        <http://www.w3.org/2004/02/skos/core> ;
 .
 
 <https://linked.data.gov.au/org/dcceew>
@@ -98,6 +104,48 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:component-model ;
+        dcat:hadRole role:background-model ;
     ] ;
 .
+
+
+<http://www.w3.org/2002/07/owl>
+    a owl:Ontology ;
+    schema:name "Web Ontology Language Ontology" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:background-model ;
+    ] ;
+.
+
+<http://www.w3.org/ns/dx/prof>
+    a owl:Ontology ;
+    schema:name "Profiles Vocabulary Ontology" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:background-model ;
+    ] ;
+.
+
+<https://schema.org>
+    a owl:Ontology ;
+    schema:name "schema.org Ontology" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:background-model ;
+    ] ;
+.
+
+<http://www.w3.org/2004/02/skos/core>
+    a owl:Ontology ;
+    schema:name "SKOS Ontology" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:background-model ;
+    ] ;
+.
+

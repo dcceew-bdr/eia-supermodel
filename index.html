@@ -456,24 +456,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_patterns">3. Patterns</a></li>
 <li><a href="#_models">4. Models</a>
 <ul class="sectlevel2">
-<li><a href="#_component_models">4.1. Component Models</a>
-<ul class="sectlevel3">
-<li><a href="#_ecological_trait_data_standard">4.1.1. Ecological Trait-data Standard</a></li>
-<li><a href="#_australian_biodiversity_information_standard">4.1.2. Australian Biodiversity Information Standard</a></li>
-<li><a href="#_ansis_ontology">4.1.3. ANSIS Ontology</a></li>
-<li><a href="#_nsl_model">4.1.4. NSL Model</a></li>
-</ul>
-</li>
-<li><a href="#_background_models">4.2. Background Models</a>
-<ul class="sectlevel3">
-<li><a href="#_geosparql">4.2.1. GeoSPARQL</a></li>
-<li><a href="#_sosa">4.2.2. SOSA</a></li>
-<li><a href="#_skos">4.2.3. SKOS</a></li>
-<li><a href="#_prov">4.2.4. PROV</a></li>
-<li><a href="#_schema_org">4.2.5. schema.org</a></li>
-<li><a href="#_owl_time">4.2.6. OWL TIME</a></li>
-</ul>
-</li>
+<li><a href="#_component_models">4.1. Component Models</a></li>
+<li><a href="#_background_models">4.2. Background Models</a></li>
 </ul>
 </li>
 <li><a href="#_vocabularies">5. Vocabularies</a></li>
@@ -760,7 +744,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Figure 1. Top: A un-qualified relationship - <code>marriedTo</code> - between two people. Bottom: a qualified relationship between people where the start and end date is indicated.</div>
 </div>
 <div class="paragraph">
-<p>The <em>Qualified Relations</em> pattern show above is not defined by any particular model within this Supermodel but is implemented by many of them. It is a fundamental graph modelling pattern used by modelling systems such as OWL.</p>
+<p>The <em>Qualified Relations</em> pattern shown above is not defined by any particular model within this Supermodel but is implemented by many of them. It is a fundamental graph modelling pattern used by modelling systems such as OWL.</p>
 </div>
 <div class="paragraph">
 <p>There is no one definitive set of patterns that can be extracted from this Supermodel&#8217;s models as patterns overlaps both across and sometimes within models, however patterns that are deemed important are often formalise with validation rules that look for them in data, see the <a href="#_validators">Validators</a> section.</p>
@@ -789,51 +773,61 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Spatial Dataset Structure</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AusTraits">[AusTraits]</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide a conventional structure for spatial datasets to allow their use in spatial (GIS) tools that require fixed structures</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implemented by:</p>
+<p class="tableblock"><a href="https://linked.data.gov.au/dataset/eiatest/ansis">ANSIS Dataset</a>,<br>
+<a href="https://linked.data.gov.au/dataset/eiatest/bdr-act">BDR Dataset for the ACT</a>,<br>
+<a href="https://linked.data.gov.au/dataset/eiatest/hcas">HCAS Dataset</a>,<br>
+<a href="https://linked.data.gov.au/dataset/eiatest/nvis">NVIS Dataset</a>,<br>
+<a href="https://linked.data.gov.au/dataset/eiatest/refareas">Reference Areas Dataset for the ACT</a></p>
+<p class="tableblock">Validated by:</p>
+<p class="tableblock"><a href="http://www.opengis.net/def/geosparql/validator">GeoSPARQL Validator</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Environmental Dataset Domain Categorisation</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide a high-level thematic categorisation of all datasets within the EIA Supermodel scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datasets categorised according to the <a href="https://linked.data.gov.au/def/eia-dk">EIA Data Kinds Vocabulary</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Object Spatiality</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide a conventional way to indicate spatiality of objects</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by the <a href="http://www.opengis.net/ont/geosparql">GeoSPARQL Ontology</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Classification Term Definition</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide a conventional way to present defined terms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by the <a href="https://linked.data.gov.au/def/vocpub">VocPub Profile</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Classification Vocabulary Structure</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide a conventional way to present collections of defined terms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by the <a href="https://linked.data.gov.au/def/vocpub">VocPub Profile</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Model Classes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide a conventional way to define classes of data objects within models</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by the <a href="https://w3id.org/profile/ontpub">OntPub Profile</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Model Relationships</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To allow the dependencies between models to be known</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by the <a href="https://www.w3.org/TR/dx-prof/">Profiles Vocabulary</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Observations</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To place observations, results, methods used etc. in relation to one another</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined by the <a href="https://www.w3.org/TR/vocab-ssn/">SOSA Ontology within the SSN Ontology</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain-wide Observable Properties</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To provide a single, master, listing of Observable Properties across all EIA datasets allowing for simple cross-querying</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The list is presented as a vocabulary in the <a href="https://linked.data.gov.au/def/eia-op">EIA Observable Properties Vocabulary</a></p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The above list of patterns is not exhaustive - no list could be as patterns overlap other patterns - and should be curated and grown as new valuable patterns are determined.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -877,48 +871,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Here are details of each of the four Component Model:</p>
 </div>
-<div class="sect3">
-<h4 id="_ecological_trait_data_standard"><a class="anchor" href="#_ecological_trait_data_standard"></a>4.1.1. Ecological Trait-data Standard</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_australian_biodiversity_information_standard"><a class="anchor" href="#_australian_biodiversity_information_standard"></a>4.1.2. Australian Biodiversity Information Standard</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_ansis_ontology"><a class="anchor" href="#_ansis_ontology"></a>4.1.3. ANSIS Ontology</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_nsl_model"><a class="anchor" href="#_nsl_model"></a>4.1.4. NSL Model</h4>
-
+<h4 id="_listing" class="discrete">Listing</h4>
+<div class="paragraph">
+<p>The listing of all Component Models used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/models">EIA Test Models Catalogue</a> where the models are indicated as having the role <em>Component Model</em>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_background_models"><a class="anchor" href="#_background_models"></a>4.2. Background Models</h3>
-<div class="sect3">
-<h4 id="_geosparql"><a class="anchor" href="#_geosparql"></a>4.2.1. GeoSPARQL</h4>
-
+<div class="paragraph">
+<p>Models used to implement patterns <a href="#_patterns">as listed above</a> but which are not Component Models aiming to model the entire contents of a Supermodel Datasets are Background Models.</p>
 </div>
-<div class="sect3">
-<h4 id="_sosa"><a class="anchor" href="#_sosa"></a>4.2.2. SOSA</h4>
-
+<div class="paragraph">
+<p>Some of these Background Models are several steps removed from the Component Models where they are background models for other background models for the Component Models.</p>
 </div>
-<div class="sect3">
-<h4 id="_skos"><a class="anchor" href="#_skos"></a>4.2.3. SKOS</h4>
-
+<div class="paragraph">
+<p>Many of these Background Models are well-known, international standard, models.</p>
 </div>
-<div class="sect3">
-<h4 id="_prov"><a class="anchor" href="#_prov"></a>4.2.4. PROV</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_schema_org"><a class="anchor" href="#_schema_org"></a>4.2.5. schema.org</h4>
-
-</div>
-<div class="sect3">
-<h4 id="_owl_time"><a class="anchor" href="#_owl_time"></a>4.2.6. OWL TIME</h4>
-
+<h4 id="_listing_2" class="discrete">Listing</h4>
+<div class="paragraph">
+<p>The listing of all Component Models used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/models">EIA Test Models Catalogue</a> where the models are indicated as having the role <em>Background Model</em>.</p>
 </div>
 </div>
 </div>
@@ -927,7 +898,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_vocabularies"><a class="anchor" href="#_vocabularies"></a>5. Vocabularies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Some of the vocabularies within this Supermodel are relevant to all datasets within this Supermodel&#8217;s data <a href="#_dataset_scope">scope</a>, others just to particular Component Models.</p>
+<p>Some of the vocabularies within this Supermodel are relevant to all datasets within this it&#8217;s <a href="#_dataset_scope">scope</a>, others are relevant to particular ones.</p>
 </div>
 <div class="paragraph">
 <p>Those relevant to all datasets are required for use by the <a href="#EIADP">EIA Data Profile</a> and are:</p>
@@ -946,41 +917,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p><a href="https://linked.data.gov.au/eia-dk">EIA Data Kinds Vocabulary</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>"A vocabulary of the kinds of data within Environmental Information Australia"</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://linked.data.gov.au/eia-op">EIA Observable Properties Vocabulary</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>"A vocabulary of all the Observable Properties within the Environmental Information Australia Supermodel"</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Each dataset claiming conformance to this Supermodel must be classified according to at least one EnvThes term</p>
+<p>Each dataset claiming conformance to this Supermodel must be classified according to at least one EnvThes term, as per requirements encoded in the <a href="#EIADP">EIA Data Profile</a>.</p>
 </div>
 <div class="paragraph">
-<p>The vocabularies relevant to individual Component Models and Background Models are defined by those models, however, here is a table of many of them and the models to which they are relevant:</p>
+<p>The vocabularies relevant to individual Component Models and Background Models are defined, or indicted for use by, those models.</p>
 </div>
-<table class="tableblock frame-all grid-all stripes-even stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Model / Dataset</th>
-<th class="tableblock halign-left valign-top">Vocabulary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ANSIS  / &lt;&lt;ANSISO, ANSIS Ontology</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Land Surface classifiers
-Soil Profile classifiers
-Substrate classifiers
-Australian Land Use and Management Classification</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">- / NVIS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NVIS Major Vegetation Groups and Major Vegetation Subgroups</p>
-<p class="tableblock">AusTraits Plant Dictionary glossary</p></td>
-</tr>
-</tbody>
-</table>
+<h4 id="_listing_3" class="discrete">Listing</h4>
+<div class="paragraph">
+<p>The listing of all vocabularies used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/vocabs">EIA Test Vocabulary Catalogue</a>.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1051,6 +1017,10 @@ Australian Land Use and Management Classification</p></td>
 </table>
 <div class="paragraph">
 <p>All the validators used within this Supermodel are implemented in <a href="#SHACL">SHACL</a>, an <a href="#RDF">RDF</a> data validation language and validation of data may be carried out as per the <a href="https://linked.data.gov.au/def/abis#<em>performing_validation">ABIS' _Performing Validation</em></a> section.</p>
+</div>
+<h4 id="_listing_4" class="discrete">Listing</h4>
+<div class="paragraph">
+<p>The listing of all vocabularies used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/validators">EIA Test Validators Catalogue</a>.</p>
 </div>
 </div>
 </div>
@@ -1136,7 +1106,7 @@ Australian Land Use and Management Classification</p></td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-11-20 13:27:46 UTC
+Last updated 2025-11-20 17:27:50 UTC
 </div>
 </div>
 </body>
