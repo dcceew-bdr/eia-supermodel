@@ -1,4 +1,4 @@
-= Environmental Information Australia Supermodel
+= Environmental Information Australia - Supermodel
 :favicon: images/logo-qld.svg
 :toc: left
 :toclevels: 3
@@ -9,9 +9,9 @@
 
 image::images/dcceew-logo-blue.svg[width=500,float="center",align="center"]
 
-image::images/eia-supermodel-parts.svg[width=750,float="center",align="center"]
+A 'Supermodel' is a set of data models designed to integrate data. This Supermodel has been built for https://www.dcceew.gov.au/[DCCEEW] to integrate https://www.dcceew.gov.au/environment/environment-information-australia[Environmental Information Australia] datasets.
 
-A 'Supermodel' is set of data models used by to integrate data. This Supermodel is designed to allow DCCEEW to integrate Environmental Information Australia datasets.
+image::images/eia-supermodel-parts.svg[width=750,float="center",align="center"]
 
 [NOTE]
 ====
@@ -24,12 +24,12 @@ This Supermodel is demonstrated through the https://eia.testing.bdr.gov.au[EIA T
 |===
 |**IRI** | https://linked.data.gov.au/def/eia-supermodel
 |**Title** | EIA Supermodel
-|**Description** | This is an overarching model - a Supermodel - used to integrate multiple, individual, models together for use within a particular scenario.
+|**Description** | This is demonstration an enterprise data model - a Supermodel - that has part models to represent specialised datasets and yet works together to integrate for all of Environmental Information Australia's scope.
 |**Created** | 2025-02-15
-|**Modified** | 2025-08-30
+|**Modified** | 2025-11-16
 |**Issued** | 2025-08-30
 |**Version** | 1
-|**Creator** | https://kurrawong.ai[KurrawongAI], for DCCEEW
+|**Creator** | https://kurrawong.ai[KurrawongAI], for https://www.dcceew.gov.au/[DCCEEW]
 |**Publisher** | https://linked.data.gov.au/org/dcceew[Department of Climate Change, Energy, the Environment and Water (DCCEEW)]
 |**License** | https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution 4.0 International (CC BY 4.0)]
 |**Code Repository** | https://github.com/dcceew-bdr/eia-supermodel
@@ -230,16 +230,16 @@ AusTraits Plant Dictionary glossary
 
 == Validators
 
-The validators relevant to this Supermodel come from a range of sources and some derive from and extend on others. The following table lists all of them with derivation notes.
+The validators relevant to this Supermodel come from a range of sources and some derive from, and extend upon, others. The following table lists all of them with derivation notes.
 
 |===
 | Validator | Derived From | Relevant Models | Notes
 
-| Basic Catalogue Profile | <<DCAT, DCAT>> | DCAT | Validates Datsets' metadata contains basic annotations and relations to Agents
+| Basic Catalogue Profile | <<DCAT, DCAT>> | DCAT | Validates Datasets' metadata contains basic annotations and relations to Agents
 | <<LOCIDP, Loc-I Data Profile>> | DCAT, <<GEO, GeoSPARQL>> | DCAT, <<SDO, schema.org>> | Requires minimum metadata for catalogued datasets containing spatial data
 | <<EIADP, EIA Data Profile>> | Loc-I Data Profile | DCAT, schema.org | Requires minimum environmental domain dataset metadata
-| GeoSPARQL 1.1 validator | GeoSPARQL | GeoSPARQL | Basic GeosPARQL validation
-| ABIS & BDR PR Validators | <<ABIS, ABIS>>, <<BDRPR, BDR Profile of ABIS>> | ABIS & BDR-PR | Validates all aspects of ABIS, and BDR Profile of ABIS, data
+| http://www.opengis.net/def/geosparql/validator[GeoSPARQL 1.1] | GeoSPARQL | GeoSPARQL | Basic GeosPARQL validation
+| https://resources.bdr.gov.au/catalogues/bdr-cat:abis-validators[ABIS] & https://resources.bdr.gov.au/catalogues/bdr-cat:bdr-validators[BDR PR] | <<ABIS, ABIS>>, <<BDRPR, BDR Profile of ABIS>> | ABIS & BDR-PR | Validates all aspects of ABIS, and BDR Profile of ABIS, data
 | <<ONTPUB, OntPub>> | DCAT, <<OWL, OWL>> | DCAT, OWL | Requires minimum cataloguing metadata, structural composition and element annotations for OWL Ontologies
 | <<VOCPUB, VocPub>> | DCAT, <<SKOS, SKOS>> | DCAT, SKOS | Requires minimum cataloguing metadata and structural composition for SKOS vocabularies
 |===

@@ -1,1 +1,103 @@
-# nothing yet
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX role: <https://linked.data.gov.au/def/supermodel/role/>
+PREFIX schema: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://linked.data.gov.au/def/eia-supermodel>
+    a prof:Profile ;
+    schema:copyrightHolder <https://linked.data.gov.au/org/dcceew> ;
+    schema:creator <https://linked.data.gov.au/org/dcceew> ;
+    schema:dateCreated "2025-05-15"^^xsd:date ;
+    schema:dateModified "2025-11-20"^^xsd:date ;
+    schema:dateIssued "2025-06-30"^^xsd:date ;
+    schema:description "The Environmental Information Australia Supermodel definition" ;
+    schema:keywords
+        "supermodel" ,
+        "Environmental Information Australia" ;
+    schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
+    schema:name "EIA Supermodel" ;
+    schema:publisher <https://linked.data.gov.au/org/dcceew> ;
+    schema:version "1.0" ;
+    owl:versionIRI <https://linked.data.gov.au/def/eia-supermodel/1.0> ;
+    skos:historyNote "Created for the initial release of the Supermodel documentation" ;
+    schema:codeRepository "https://github.com/dcceew-bdr/eia-supermodel"^^xsd:anyURI ;
+    dcat:hadRole role:supermodel-definition ;
+    prof:isProfileOf
+        <https://anzsoil.org/def/au/domain> ,
+        <https://linked.data.gov.au/def/abis> ,
+        <https://linked.data.gov.au/def/bdr-pr> ,
+        <https://linked.data.gov.au/def/nsl> ,
+        <http://terminologies.gfbio.org/terms/ETS/> ,
+        <http://www.opengis.net/ont/geosparql> ;
+.
+
+<https://linked.data.gov.au/org/dcceew>
+    a schema:Organization ;
+    schema:name "Department of Climate Change, energy, the Environment and Water" ;
+    schema:url "https://www.dcceew.gov.au/"^^xsd:anyURI ;
+.
+
+<https://anzsoil.org/def/au/domain>
+    a owl:Ontology ;
+    schema:name "ANSIS Ontology" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:component-model ;
+    ] ;
+.
+
+<https://linked.data.gov.au/def/abis>
+    a owl:Ontology ;
+    schema:name "Australian Biodiversity Information Standard" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:component-model ;
+    ] ;
+.
+
+<https://linked.data.gov.au/def/bdr-pr>
+    a owl:Ontology ;
+    schema:name "BDR Profile of ABIS" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:component-model ;
+    ] ;
+.
+
+<https://linked.data.gov.au/def/nsl>
+    a owl:Ontology ;
+    schema:name "National Species List - Semantic Web Model" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:component-model ;
+    ] ;
+.
+
+<http://terminologies.gfbio.org/terms/ETS/>
+    a owl:Ontology ;
+    schema:name "Ecological Trait-data Standard" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:component-model ;
+    ] ;
+.
+
+<http://www.opengis.net/ont/geosparql>
+    a owl:Ontology ;
+    schema:name "GeoSPARQL Ontology" ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole role:component-model ;
+    ] ;
+.
