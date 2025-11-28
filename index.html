@@ -456,7 +456,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_patterns">3. Patterns</a></li>
 <li><a href="#_models">4. Models</a>
 <ul class="sectlevel2">
-<li><a href="#_component_models">4.1. Component Models</a></li>
+<li><a href="#_foreground_models">4.1. Foreground Models</a></li>
 <li><a href="#_background_models">4.2. Background Models</a></li>
 </ul>
 </li>
@@ -627,10 +627,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 <div class="paragraph">
-<p>This Supermodel contains <em>Component Models</em> for each of these datasets, as well as 20+ supporting assets - vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.</p>
+<p>This Supermodel contains <em>Foreground Models</em> for each of these datasets, as well as 20+ supporting assets - vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.</p>
 </div>
 <div class="paragraph">
-<p>Together, the <em>Component Models</em>, <em>Background Models</em> and other Supermodel elements allow all parts of these DCCEEW datasets to be integrated, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together and reference values for common attributes are aligned.</p>
+<p>Together, the <em>Foreground Models</em>, <em>Background Models</em> and other Supermodel elements allow all parts of these DCCEEW datasets to be integrated, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together and reference values for common attributes are aligned.</p>
 </div>
 </div>
 <div class="sect2">
@@ -651,13 +651,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_patterning"><a class="anchor" href="#_patterning"></a>2.5. Patterning</h3>
 <div class="paragraph">
-<p>Integrated use of multiple Component Models depends on each of them implementing, or mapping to, parts of the Background Models referred to as <a href="#pattern">patterns</a>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <a href="#_patterns">Patterns</a> section lists a set that covers the scoped datasets' implementation at least once over.</p>
+<p>Integrated use of multiple Foreground Models depends on each of them implementing, or mapping to, parts of the Background Models referred to as <a href="#pattern">patterns</a>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <a href="#_patterns">Patterns</a> section lists a set that covers the scoped datasets' implementation at least once over.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_validation"><a class="anchor" href="#_validation"></a>2.6. Validation</h3>
 <div class="paragraph">
-<p>For demonstrable interoperability, this Supermodel contains data validators for some of its Background and Component Models that test data claiming conformance to it against identified patterns. These validators are executable model specifications.</p>
+<p>For demonstrable interoperability, this Supermodel contains data validators for some of its Background and Foreground Models that test data claiming conformance to it against identified patterns. These validators are executable model specifications.</p>
 </div>
 <div class="paragraph">
 <p>Most of the validators for the models within this Supermodel were created by the original model implementors, e.g. GeoSPARQL &amp; ABIS, but one validator in particular was created for the  EIA Demonstrator project: the <a href="https://linked.data.gov.au/def/eia-dp">EIA Data Profile</a>. This validator is used to ensure datasets have basic metadata required to implement patterns listed in the <a href="#_patterns">Patterns</a> section.</p>
@@ -675,11 +675,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <dl>
 <dt class="hdlist1"><a id="BM"></a> Background Model</dt>
 <dd>
-<p>A role within a Supermodel for low level or generic models that some, but not necessarily all, of the <a href="#_component_models">Component Models</a> reuse and extend, depending on the patterns of data they contain.</p>
+<p>A role within a Supermodel for low level or generic models that some, but not necessarily all, of the <a href="#_foreground_models">Foreground Models</a> reuse and extend, depending on the patterns of data they contain.</p>
 </dd>
-<dt class="hdlist1"><a id="CM"></a> Component Model</dt>
+<dt class="hdlist1"><a id="CM"></a> Foreground Model</dt>
 <dd>
-<p>A role within a Supermodel for the models of individual datasets within the set aiming for interoperability. Component Models must reuse and extend the Background Models.</p>
+<p>A role within a Supermodel for the models of individual datasets within the set aiming for interoperability. Foreground Models must reuse and extend the Background Models.</p>
 </dd>
 <dt class="hdlist1">Feature</dt>
 <dd>
@@ -834,7 +834,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_models"><a class="anchor" href="#_models"></a>4. Models</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_component_models"><a class="anchor" href="#_component_models"></a>4.1. Component Models</h3>
+<h3 id="_foreground_models"><a class="anchor" href="#_foreground_models"></a>4.1. Foreground Models</h3>
 <div class="paragraph">
 <p>Of the 7 Datasets in this Supermodel&#8217;s <a href="#_dataset_scope">scope</a>:</p>
 </div>
@@ -854,7 +854,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </dd>
 <dt class="hdlist1">NVIS &amp; HCAS</dt>
 <dd>
-<p>don&#8217;t need Component Models as their concerns can be represented using this Supermodel&#8217;s Background Models</p>
+<p>don&#8217;t need Foreground Models as their concerns can be represented using this Supermodel&#8217;s Background Models</p>
 </dd>
 <dt class="hdlist1">Reference Areas</dt>
 <dd>
@@ -866,30 +866,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Only one dataset, SPRAT, is not yet bound in to the Supermodel by one of the methods applied to the other 6. This is planned to happen soon.</p>
 </div>
 <div class="paragraph">
-<p>The AusTraits to NSL Mapping Linkset doesn&#8217;t need a Component Model either <em>IF</em> a single predicate can be added to either AusTraits.</p>
+<p>The AusTraits to NSL Mapping Linkset doesn&#8217;t need a Foreground Model either <em>IF</em> a single predicate can be added to either AusTraits.</p>
 </div>
 <div class="paragraph">
-<p>Here are details of each of the four Component Model:</p>
+<p>Here are details of each of the four Foreground Model:</p>
 </div>
 <h4 id="_listing" class="discrete">Listing</h4>
 <div class="paragraph">
-<p>The listing of all Component Models used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/models">EIA Test Models Catalogue</a> where the models are indicated as having the role <em>Component Model</em>.</p>
+<p>The listing of all Foreground Models used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/models">EIA Test Models Catalogue</a> where the models are indicated as having the role <em>Foreground Model</em>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_background_models"><a class="anchor" href="#_background_models"></a>4.2. Background Models</h3>
 <div class="paragraph">
-<p>Models used to implement patterns <a href="#_patterns">as listed above</a> but which are not Component Models aiming to model the entire contents of a Supermodel Datasets are Background Models.</p>
+<p>Models used to implement patterns <a href="#_patterns">as listed above</a> but which are not Foreground Models aiming to model the entire contents of a Supermodel Datasets are Background Models.</p>
 </div>
 <div class="paragraph">
-<p>Some of these Background Models are several steps removed from the Component Models where they are background models for other background models for the Component Models.</p>
+<p>Some of these Background Models are several steps removed from the Foreground Models where they are background models for other background models for the Foreground Models.</p>
 </div>
 <div class="paragraph">
 <p>Many of these Background Models are well-known, international standard, models.</p>
 </div>
 <h4 id="_listing_2" class="discrete">Listing</h4>
 <div class="paragraph">
-<p>The listing of all Component Models used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/models">EIA Test Models Catalogue</a> where the models are indicated as having the role <em>Background Model</em>.</p>
+<p>The listing of all Foreground Models used in this Supermodel is given in the <a href="https://linked.data.gov.au/dataset/eiatest/catalogue/models">EIA Test Models Catalogue</a> where the models are indicated as having the role <em>Background Model</em>.</p>
 </div>
 </div>
 </div>
@@ -941,7 +941,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Each dataset claiming conformance to this Supermodel must be classified according to at least one EnvThes term, as per requirements encoded in the <a href="#EIADP">EIA Data Profile</a>.</p>
 </div>
 <div class="paragraph">
-<p>The vocabularies relevant to individual Component Models and Background Models are defined, or indicted for use by, those models.</p>
+<p>The vocabularies relevant to individual Foreground Models and Background Models are defined, or indicted for use by, those models.</p>
 </div>
 <h4 id="_listing_3" class="discrete">Listing</h4>
 <div class="paragraph">
@@ -1106,7 +1106,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-11-20 17:27:50 UTC
+Last updated 2025-11-28 08:38:07 UTC
 </div>
 </div>
 </body>
