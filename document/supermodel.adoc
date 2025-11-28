@@ -141,6 +141,7 @@ There is no one definitive set of patterns that can be extracted from this Super
 
 The following list of patterns are taken from this Supermodel's models and validators that cover major aspects of data needed to be modelled in particular ways to achieve certain interoperability outcomes.
 
+[cols="1,2,2"]
 |===
 | Pattern | Purpose | Implementation
 
