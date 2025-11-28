@@ -3,7 +3,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX prof: <http://www.w3.org/ns/dx/prof/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX role: <https://linked.data.gov.au/def/supermodel/role/>
+PREFIX roles: <https://linked.data.gov.au/def/supermodel/roles/>
 PREFIX schema: <https://schema.org/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -26,7 +26,11 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     owl:versionIRI <https://linked.data.gov.au/def/eia-supermodel/1.0> ;
     skos:historyNote "Created for the initial release of the Supermodel documentation" ;
     schema:codeRepository "https://github.com/dcceew-bdr/eia-supermodel"^^xsd:anyURI ;
-    dcat:hadRole role:supermodel-definition ;
+    dcat:qualifiedRelation [
+        a dcat:Relationship ;
+        dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
+        dcat:hadRole roles:supermodel-definition ;
+    ] ;
     prof:isProfileOf
         # Component Models
         <https://anzsoil.org/def/au/domain> ,
@@ -54,7 +58,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:component-model ;
+        dcat:hadRole roles:foreground-model ;
     ] ;
 .
 
@@ -64,7 +68,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:component-model ;
+        dcat:hadRole roles:foreground-model ;
     ] ;
 .
 
@@ -74,7 +78,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:component-model ;
+        dcat:hadRole roles:foreground-model ;
     ] ;
 .
 
@@ -84,7 +88,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:component-model ;
+        dcat:hadRole roles:foreground-model ;
     ] ;
 .
 
@@ -94,7 +98,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:component-model ;
+        dcat:hadRole roles:foreground-model ;
     ] ;
 .
 
@@ -104,7 +108,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:background-model ;
+        dcat:hadRole roles:background-model ;
     ] ;
 .
 
@@ -115,7 +119,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:background-model ;
+        dcat:hadRole roles:background-model ;
     ] ;
 .
 
@@ -125,7 +129,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:background-model ;
+        dcat:hadRole roles:background-model ;
     ] ;
 .
 
@@ -135,7 +139,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:background-model ;
+        dcat:hadRole roles:background-model ;
     ] ;
 .
 
@@ -145,7 +149,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcat:qualifiedRelation [
         a dcat:Relationship ;
         dcterms:relation <https://linked.data.gov.au/def/eia-supermodel> ;
-        dcat:hadRole role:background-model ;
+        dcat:hadRole roles:background-model ;
     ] ;
 .
 

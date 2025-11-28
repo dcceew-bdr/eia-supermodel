@@ -72,9 +72,9 @@ An eighth dataset, _Reference Areas_ was established too. This is a general-purp
 [start=8]
 . Reference Areas
 
-This Supermodel contains _Component Models_ for each of these datasets, as well as 20+ supporting assets - vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.
+This Supermodel contains _Foreground Models_ for each of these datasets, as well as 20+ supporting assets - vocabularies, data validators - formulated according to the Supermodel Model specification. These are detailed below.
 
-Together, the _Component Models_, _Background Models_ and other Supermodel elements allow all parts of these DCCEEW datasets to be integrated, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together and reference values for common attributes are aligned.
+Together, the _Foreground Models_, _Background Models_ and other Supermodel elements allow all parts of these DCCEEW datasets to be integrated, for example, the spatial parts of any two datasets may be overlayed, the observations from datasets that contain them can be used together and reference values for common attributes are aligned.
 
 === Modelling System
 
@@ -88,11 +88,11 @@ The technical presentation of data modelled in OWL is in <<RDF>> which is a grap
 
 === Patterning
 
-Integrated use of multiple Component Models depends on each of them implementing, or mapping to, parts of the Background Models referred to as <<pattern, patterns>>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <<Patterns, Patterns>> section lists a set that covers the scoped datasets' implementation at least once over.
+Integrated use of multiple Foreground Models depends on each of them implementing, or mapping to, parts of the Background Models referred to as <<pattern, patterns>>. The patterns of relevance to this EIA Supermodel do not make a finite list as patterns can exist within and overlap other patterns, however the <<Patterns, Patterns>> section lists a set that covers the scoped datasets' implementation at least once over.
 
 === Validation
 
-For demonstrable interoperability, this Supermodel contains data validators for some of its Background and Component Models that test data claiming conformance to it against identified patterns. These validators are executable model specifications.
+For demonstrable interoperability, this Supermodel contains data validators for some of its Background and Foreground Models that test data claiming conformance to it against identified patterns. These validators are executable model specifications.
 
 Most of the validators for the models within this Supermodel were created by the original model implementors, e.g. GeoSPARQL & ABIS, but one validator in particular was created for the  EIA Demonstrator project: the https://linked.data.gov.au/def/eia-dp[EIA Data Profile]. This validator is used to ensure datasets have basic metadata required to implement patterns listed in the <<Patterns, Patterns>> section.
 
@@ -102,9 +102,9 @@ The <<Validators, Validators>> section below lists all the validators relevant t
 
 Here is a list of terms and acronyms used in this document.
 
-[[BM]] Background Model:: A role within a Supermodel for low level or generic models that some, but not necessarily all, of the <<Component Models>> reuse and extend, depending on the patterns of data they contain.
+[[BM]] Background Model:: A role within a Supermodel for low level or generic models that some, but not necessarily all, of the <<Foreground Models>> reuse and extend, depending on the patterns of data they contain.
 
-[[CM]] Component Model:: A role within a Supermodel for the models of individual datasets within the set aiming for interoperability. Component Models must reuse and extend the Background Models.
+[[CM]] Foreground Model:: A role within a Supermodel for the models of individual datasets within the set aiming for interoperability. Foreground Models must reuse and extend the Background Models.
 
 Feature:: The class of object for "Anything spatial (being or having a shape, position or an extent)", according to <<GEO, GeoSPARQL>>
 
@@ -170,39 +170,39 @@ The above list of patterns is not exhaustive - no list could be as patterns over
 
 == Models
 
-=== Component Models
+=== Foreground Models
 
 Of the 7 Datasets in this Supermodel's <<Dataset Scope, scope>>:
 
 AusTraits:: follows an international domain ontology, <<ETS, Ecological Trait-data Standard>> compatible with this Supermodel
 BDR:: implements a profile of the Australian Semantic Web data exchange standard, <<ABIS, ABIS>> which this Supermodel incorporates
 ANSIS & NSL:: have purpose-built ontologies, <<ANSISO, ANSIS Ontology>> & <<NSLMODEL, NSL Model>> compatible with ABIS and this Supermodel
-NVIS & HCAS:: don't need Component Models as their concerns can be represented using this Supermodel's Background Models
+NVIS & HCAS:: don't need Foreground Models as their concerns can be represented using this Supermodel's Background Models
 Reference Areas:: conforms to <<GEO, GeoSPARQL>>, the background spatial model
 
 Only one dataset, SPRAT, is not yet bound in to the Supermodel by one of the methods applied to the other 6. This is planned to happen soon.
 
-The AusTraits to NSL Mapping Linkset doesn't need a Component Model either _IF_ a single predicate can be added to either AusTraits.
+The AusTraits to NSL Mapping Linkset doesn't need a Foreground Model either _IF_ a single predicate can be added to either AusTraits.
 
-Here are details of each of the four Component Model:
+Here are details of each of the four Foreground Model:
 
 [discrete]
 ==== Listing
 
-The listing of all Component Models used in this Supermodel is given in the https://linked.data.gov.au/dataset/eiatest/catalogue/models[EIA Test Models Catalogue] where the models are indicated as having the role _Component Model_.
+The listing of all Foreground Models used in this Supermodel is given in the https://linked.data.gov.au/dataset/eiatest/catalogue/models[EIA Test Models Catalogue] where the models are indicated as having the role _Foreground Model_.
 
 === Background Models
 
-Models used to implement patterns <<Patterns, as listed above>> but which are not Component Models aiming to model the entire contents of a Supermodel Datasets are Background Models.
+Models used to implement patterns <<Patterns, as listed above>> but which are not Foreground Models aiming to model the entire contents of a Supermodel Datasets are Background Models.
 
-Some of these Background Models are several steps removed from the Component Models where they are background models for other background models for the Component Models.
+Some of these Background Models are several steps removed from the Foreground Models where they are background models for other background models for the Foreground Models.
 
 Many of these Background Models are well-known, international standard, models.
 
 [discrete]
 ==== Listing
 
-The listing of all Component Models used in this Supermodel is given in the https://linked.data.gov.au/dataset/eiatest/catalogue/models[EIA Test Models Catalogue] where the models are indicated as having the role _Background Model_.
+The listing of all Foreground Models used in this Supermodel is given in the https://linked.data.gov.au/dataset/eiatest/catalogue/models[EIA Test Models Catalogue] where the models are indicated as having the role _Background Model_.
 
 == Vocabularies
 
@@ -219,13 +219,12 @@ Those relevant to all datasets are required for use by the <<EIADP, EIA Data Pro
 
 Each dataset claiming conformance to this Supermodel must be classified according to at least one EnvThes term, as per requirements encoded in the <<EIADP, EIA Data Profile>>.
 
-The vocabularies relevant to individual Component Models and Background Models are defined, or indicted for use by, those models.
+The vocabularies relevant to individual Foreground Models and Background Models are defined, or indicted for use by, those models.
 
 [discrete]
 ==== Listing
 
 The listing of all vocabularies used in this Supermodel is given in the https://linked.data.gov.au/dataset/eiatest/catalogue/vocabs[EIA Test Vocabulary Catalogue].
-
 
 == Validators
 
